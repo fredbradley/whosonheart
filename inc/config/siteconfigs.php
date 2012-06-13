@@ -5,7 +5,7 @@
 ****************************************
 ** Site using Smarty                  **
 ** Fred Bradley +44 (0) 7867 953 849  **
-** fred@fredbradley.co.uk             **
+** fred@fredbradley.me                **
 ***************************************/
 
 	/* DEFINES PATHS */
