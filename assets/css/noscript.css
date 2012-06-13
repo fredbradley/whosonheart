@@ -1,0 +1,9 @@
+#offerslider { overflow: hidden; }
+
+#gallery { padding-bottom: 25px; }
+
+#gallery ul li { margin-bottom: 15px; }
+
+ul.testimonials li { margin-top: 30px; }
+
+ul.testimonials li:first-child { margin-top: 0; }
