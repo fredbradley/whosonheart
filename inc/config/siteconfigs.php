@@ -7,7 +7,7 @@
 ** Fred Bradley +44 (0) 7867 953 849  **
 ** fred@fredbradley.me                **
 ***************************************/
-
+// Test
 	/* DEFINES PATHS */
 		if ($_SERVER['SERVER_ADDR'] != "127.0.0.1") {
 			$ROOT_PATH = "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/";
