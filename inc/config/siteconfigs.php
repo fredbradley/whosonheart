@@ -9,8 +9,11 @@
 ***************************************/
 
 	/* DEFINES PATHS */
-//		$ROOT_PATH = "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/";
-		$ROOT_PATH = "/Users/fredbradley/Sites/smarty_site/";
+		if ($_SERVER['SERVER_ADDR'] != "127.0.0.1") {
+			$ROOT_PATH = "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/";
+		} else { 
+			$ROOT_PATH = "/Users/fredbradley/Sites/smarty_site/";
+		}
 		$SITE_PATH = $ROOT_PATH."whosonheart/";
 		
 
