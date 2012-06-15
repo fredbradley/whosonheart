@@ -234,8 +234,10 @@ function getUsers() {
 	}
 	return $output;
 }
-function getSites() {
+function getSites($sort="surname", $order="ASC") {
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
+	if (isset($_GET['sort']))
+	$query = $query ." ORDER BY ".$sort." ".$order."";
 	$this->result = mysql_query($query);
 	while($row = mysql_fetch_assoc($this->result)) {
 			$output[] = $row;

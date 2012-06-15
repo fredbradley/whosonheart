@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 11:08:03
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 12:55:23
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1985589784fd8668372b1c6-49261982%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '608f7559c0b411ed236e1b046c2c0fe60ed4bfda' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_head.tpl',
-      1 => 1339581144,
+      1 => 1339588497,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'variables' => 
-  array (
-    'SITE' => 0,
-    'ADMIN' => 0,
-  ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_4fd86683734163_32234724',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fd86683734163_32234724')) {function content_4fd86683734163_32234724($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,9 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		
-		<title><?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
- | <?php echo $_smarty_tpl->tpl_vars['ADMIN']->value['page_name'];?>
-</title>
+		<title>Who's On Heart Database | Admin</title>
 		
 		<!--                       CSS                       -->
 	  

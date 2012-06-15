@@ -8,7 +8,7 @@
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-
+<span class="meta">Sort by: <a href="?sort=surname">Me</a></span>
                                                 <table>
 
                                                         <thead>

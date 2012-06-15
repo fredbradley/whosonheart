@@ -1,6 +1,6 @@
 <?php
 
-$sites = $db->getSites();
+$sites = $db->getSites($_GET['sort'], $_GET['order']);
 
 /***
  * Add New Site

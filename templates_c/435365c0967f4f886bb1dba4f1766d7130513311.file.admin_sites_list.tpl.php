@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 11:08:24
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 13:18:09
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14466915534fd866982b3734-61103015%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '435365c0967f4f886bb1dba4f1766d7130513311' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1339581144,
+      1 => 1339589887,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fd866983cfd80_94577316',
   'variables' => 
   array (
     'sites' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lastupdated' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd866983cfd80_94577316',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fd866983cfd80_94577316')) {function content_4fd866983cfd80_94577316($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
@@ -37,7 +37,7 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-
+<span class="meta">Sort by: <a href="?sort=surname">Me</a></span>
                                                 <table>
 
                                                         <thead>
