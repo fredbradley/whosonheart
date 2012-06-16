@@ -18,11 +18,13 @@
 	/* LOAD VARIABLES */
 		$user = $_SESSION['user'];
 		$page = $_GET['page'];
-		$systemMsg = "I still have to code this bit! Was going to be a databse of messages key'd on a single word, then a function to pick each message out based on keyword";
+		$systemMsg = systemMsg($_GET['message']);
+		$stats = $db->usefulStats();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 
 	/* SMARTY ASSIGNS */
+		$smarty->assign('stats', $stats);
 		$smarty->assign('user', $user);
 		$smarty->assign('page', $page);
 		$smarty->assign('action', $_GET['action']);

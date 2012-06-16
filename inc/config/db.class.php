@@ -259,6 +259,39 @@ function getMenu($parent) {
         $array = $this->rows;
 }
 
+/* Stats for Toby */
+function usefulStats() {
+	$query = "SELECT * FROM ".DB_PREFIX."guesses";
+	$output['numguesses'] = $this->count($query);
+	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
+	$output['mostguessed'] = ucwords($list[0]['cname']);
+	$output['nextplay'] = $this->nextPlay();
+	return $output;
+}
+
+function nextPlay() {
+	if (date("w") > 0 && date("w") < 6) {
+	// If it's Mon, Tue, Wed, Thu or Fri
+		if (date("Hi") > 0900 && date("Hi") < 1550) {
+		// If it's between 0901 and 1550 (on Mon, Tue, Wed, Thu, or Fri)
+			$output = "later this hour";
+		} elseif (date("Hi") < 0900) {
+		// If it's before 0900 (on Mon, Tue, Wed, Thu or Fri)
+			$output = "at 10am";
+		} elseif (date("Hi") > 1550 && date("w") != 5) {
+		// If it's after 1550 BUT NOT Friday
+			$output = "tomorrow";
+		} elseif (date("Hi") > 1550 && date("w") == 5) {
+		// If it's after 1550 AND Friday
+			$output = "on Monday";
+		}
+	} elseif (date("w") == 6) {
+		$output = "on Monday";
+	} elseif (date("w") == 0) {
+		$output = "tomorrow";
+	}
+return $output;
+}
 
 /* Count Number of rows query */
 function count ($query) {

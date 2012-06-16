@@ -51,13 +51,13 @@
                                                 {foreach $users as $user}
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="index.php?page=users&action=edit&id={$user.id}">{$user.first_name} {$user.last_name}</a></td>
+                                                                        <td><a href="edit/{$user.id}">{$user.first_name} {$user.last_name}</a></td>
                                                                         <td>{$user.email}</td>
                                                                         <td>{$user.acl}</td>
                                                                         <td>{$user.last_login|relative_date}</td>
                                                                         <td>
-                                                                                <a href="index.php?page=users&action=edit&id={$user.id}" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="index.php?page=users&action=delete&id={$user.id}" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                                <a href="edit/{$user.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="delete/{$user.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 

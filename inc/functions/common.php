@@ -5,8 +5,18 @@ function getMsg($type, $content) {
 	$output .= "</div>";
 	return $output;
 }
-
-
+function systemMsg($code) {
+	switch($code) {
+		case 'DeleteConfirmed':
+			return "That's been deleted for you!";
+			break;
+		case 'Cancelled':
+			return "Abort, abort abort! No worries, we've cancelled that for you!";
+			break;
+		default:
+			return "I still have to code this bit! Was going to be a databse of messages key'd on a single word, then a function to pick each message out based on keyword";
+	}
+}
 class ArrayToXML
 {
 	/**

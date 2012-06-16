@@ -2,7 +2,7 @@
 		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->			
 			<h1 id="sidebar-title"><a href="#">{$SITE.name}</a></h1>		  
 			<!-- Logo (221px wide) -->
-			<a href="#"><img id="logo" src="../assets/images/logo.png" style="width:221px;" alt="{$SITE.name} logo" /></a> 
+			<a href="#"><img id="logo" src="/assets/images/logo.png" style="width:221px;" alt="{$SITE.name} logo" /></a> 
 			<!-- Sidebar Profile links -->
 <!--			<div id="profile-links">
 				Hello, <a href="user/profile" title="Edit your profile">{$user.first_name}</a>, you have <a href="#messages" rel="modal" title="3 Messages">3 Messages</a><br />
@@ -13,7 +13,7 @@
 			<ul id="main-nav">  <!-- Accordion Menu -->
 				
 				<li>
-					<a href="index.php" class="nav-top-item no-submenu {if {$page}} {else}current{/if}"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
+					<a href="/admin/index.php" class="nav-top-item no-submenu {if {$page}} {else}current{/if}"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 						Dashboard
 					</a>       
 				</li>				
@@ -23,9 +23,9 @@
 					</a>
 					<ul>
 				{if {$user.acl} gt 1}
-						<li><a href="index.php?page=sites&action=add">Add Guess</a></li>
+						<li><a href="/admin/guesses/add">Add Guess</a></li>
 				{/if}
-						<li><a href="index.php?page=sites&action=list">List Guesses</a></li>
+						<li><a href="/admin/guesses/list">List Guesses</a></li>
 					</ul>
 				</li>
 				{if {$user.acl} gt 2}
@@ -34,11 +34,11 @@
 						User Manager
 					</a>
 					<ul>
-						<li><a href="index.php?page=users&action=add">Add User</a></li>
-						<li><a href="index.php?page=users&action=list">List Users</a></li>
+						<li><a href="/admin/users/add">Add User</a></li>
+						<li><a href="/admin/users/list">List Users</a></li>
 					</ul>
 				</li>    
-				<li><a class="nav-top-item no-submenu" href="index.php?logout">Sign Out</a></li>  
+				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
 				{/if}
 			</ul> <!-- End #main-nav -->
 			<div id="info" style="display:none">

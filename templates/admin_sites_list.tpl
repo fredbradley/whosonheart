@@ -50,14 +50,14 @@
                                                 {foreach $sites as $site}
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="index.php?page=sites&action=edit&id={$site.id}">{$site.firstname|capitalize} {$site.surname|capitalize}</a></td>
+                                                                        <td><a href="edit/{$site.id}">{$site.firstname|capitalize} {$site.surname|capitalize}</a></td>
                                                                         <td>{$site.timesguessed}</td>
 									{assign var="lastupdated" value="{$site.dateguessed|substr:-10}"}
                                                                         <td>{$lastupdated|relative_date}</td>
                                                                         <td>
-                                                                                <a href="index.php?page=sites&action=edit&id={$site.id}" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="index.php?page=sites&action=delete&id={$site.id}" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                                                                <a href="edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 
                                                                 </tr>

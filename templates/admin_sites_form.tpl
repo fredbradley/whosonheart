@@ -10,20 +10,20 @@
                                 <div class="content-box-content">
 
 {if {$action}=='delete'}
-<form action="index.php?{$smarty.server.QUERY_STRING}" method="post">
+<form action="/admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
 <fieldset class="column-left">
 <p>Are you 100% sure you want to delete <span class="highlight">{$edit.cname|capitalize}</span> from the database?</p>
 <p>There is no recovering this method, apart from adding the entire content again!</p>
 </fieldset>
 <fieldset class="column-right">
-<fieldset class="column-left"><a href="index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
+<fieldset class="column-left"><a href="/admin/index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
 <input type="hidden" name="id" value="{$edit.id}" />
 </fieldset><fieldset class="column-right"><input type="submit" class="button-confirm" name="confirm-delete" value="Confirm" />
 </fieldset></fieldset>
 <div style="clear:both;"></div></form>
 {else}
 
-   <form action="index.php?{$smarty.server.QUERY_STRING}" method="post">
+   <form action="admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 <input type="hidden" name="id" id="id" value="{$edit.id}" />

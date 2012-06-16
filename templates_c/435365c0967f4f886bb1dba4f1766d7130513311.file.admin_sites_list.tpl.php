@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 13:18:09
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 13:06:40
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14466915534fd866982b3734-61103015%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '435365c0967f4f886bb1dba4f1766d7130513311' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1339589887,
+      1 => 1339848399,
       2 => 'file',
     ),
   ),
@@ -83,7 +83,7 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 ?>
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="index.php?page=sites&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                        <td><a href="edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['firstname']);?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['surname']);?>
 </a></td>
@@ -94,11 +94,11 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
                                                                         <td>
-                                                                                <a href="index.php?page=sites&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="index.php?page=sites&action=delete&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                                                                <a href="edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 
                                                                 </tr>

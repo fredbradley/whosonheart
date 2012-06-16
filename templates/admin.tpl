@@ -20,17 +20,17 @@
 			
 			<ul class="shortcut-buttons-set"> <!-- Replace the icons URL's with your own -->
 				
-				<li><a class="shortcut-button" href="index.php?page=sites&action=add"><span>
+				<li><a class="shortcut-button" href="guesses/add"><span>
 					<img src="../assets/images/build-icons/add.png" alt="icon" /><br />
 					Add A Guess
 				</span></a></li>
 				
-				<li><a class="shortcut-button" href="index.php?page=sites"><span>
+				<li><a class="shortcut-button" href="guesses/list"><span>
 					<img src="../assets/images/build-icons/pencil.png" alt="icon" /><br />
 					Edit A Guess
 				</span></a></li>
 				{if {$user.acl} gt 1}
-				<li><a class="shortcut-button" href="index.php?page=users"><span>
+				<li><a class="shortcut-button" href="users/list"><span>
 					<img src="../assets/images/build-icons/id.png" alt="icon" /><br />
 					View Users
 				</span></a></li>
@@ -51,7 +51,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Content box left</h3>
+					<h3>Useful Stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -60,9 +60,10 @@
 					<div class="tab-content default-tab">
 					
 						<h4>Maecenas dignissim</h4>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porta lectus. Maecenas dignissim enim quis ipsum mattis aliquet. Maecenas id velit et elit gravida bibendum. Duis nec rutrum lorem. Donec egestas metus a risus euismod ultricies. Maecenas lacinia orci at neque commodo commodo.
-						</p>
+						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
+						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
+						<p><strong>Most Recent Edit:</strong> {$stats.recentedit}</p>
+						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
 						
 					</div> <!-- End #tab3 -->        
 					
@@ -70,11 +71,11 @@
 				
 			</div> <!-- End .content-box -->
 			
-			<div class="content-box column-right closed-box">
+			<div class="content-box column-right">
 				
 				<div class="content-box-header"> <!-- Add the class "closed" to the Content box header to have it closed by default -->
 					
-					<h3>Content box right</h3>
+					<h3>Not so useful stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				

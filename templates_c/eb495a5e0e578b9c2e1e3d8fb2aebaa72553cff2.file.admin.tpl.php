@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 11:56:27
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 14:01:09
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16265576474fd8668d675d10-43170350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb495a5e0e578b9c2e1e3d8fb2aebaa72553cff2' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl',
-      1 => 1339844184,
+      1 => 1339851668,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'user' => 0,
+    'stats' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -49,18 +50,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			
 			<ul class="shortcut-buttons-set"> <!-- Replace the icons URL's with your own -->
 				
-				<li><a class="shortcut-button" href="index.php?page=sites&action=add"><span>
+				<li><a class="shortcut-button" href="guesses/add"><span>
 					<img src="../assets/images/build-icons/add.png" alt="icon" /><br />
 					Add A Guess
 				</span></a></li>
 				
-				<li><a class="shortcut-button" href="index.php?page=sites"><span>
+				<li><a class="shortcut-button" href="guesses/list"><span>
 					<img src="../assets/images/build-icons/pencil.png" alt="icon" /><br />
 					Edit A Guess
 				</span></a></li>
 				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1>1){?>
-				<li><a class="shortcut-button" href="index.php?page=users"><span>
+				<li><a class="shortcut-button" href="users/list"><span>
 					<img src="../assets/images/build-icons/id.png" alt="icon" /><br />
 					View Users
 				</span></a></li>
@@ -81,7 +82,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="content-box-header">
 					
-					<h3>Content box left</h3>
+					<h3>Useful Stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -90,9 +91,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div class="tab-content default-tab">
 					
 						<h4>Maecenas dignissim</h4>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porta lectus. Maecenas dignissim enim quis ipsum mattis aliquet. Maecenas id velit et elit gravida bibendum. Duis nec rutrum lorem. Donec egestas metus a risus euismod ultricies. Maecenas lacinia orci at neque commodo commodo.
-						</p>
+						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
+</p>
+						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
+</p>
+						<p><strong>Most Recent Edit:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['recentedit'];?>
+</p>
+						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
+</p>
 						
 					</div> <!-- End #tab3 -->        
 					
@@ -100,11 +106,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 			</div> <!-- End .content-box -->
 			
-			<div class="content-box column-right closed-box">
+			<div class="content-box column-right">
 				
 				<div class="content-box-header"> <!-- Add the class "closed" to the Content box header to have it closed by default -->
 					
-					<h3>Content box right</h3>
+					<h3>Not so useful stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				

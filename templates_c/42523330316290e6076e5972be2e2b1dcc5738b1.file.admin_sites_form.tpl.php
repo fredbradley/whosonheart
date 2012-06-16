@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 10:51:24
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 13:21:17
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14305894624fd86696c964e6-79637578%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42523330316290e6076e5972be2e2b1dcc5738b1' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl',
-      1 => 1339840282,
+      1 => 1339848494,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sit
 
 <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=='delete'){?>
-<form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+<form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 <fieldset class="column-left">
 <p>Are you 100% sure you want to delete <span class="highlight"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['edit']->value['cname']);?>
@@ -47,7 +47,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sit
 <p>There is no recovering this method, apart from adding the entire content again!</p>
 </fieldset>
 <fieldset class="column-right">
-<fieldset class="column-left"><a href="index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
+<fieldset class="column-left"><a href="/admin/index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
 <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
 " />
 </fieldset><fieldset class="column-right"><input type="submit" class="button-confirm" name="confirm-delete" value="Confirm" />
@@ -55,7 +55,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sit
 <div style="clear:both;"></div></form>
 <?php }else{ ?>
 
-   <form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+   <form action="admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->

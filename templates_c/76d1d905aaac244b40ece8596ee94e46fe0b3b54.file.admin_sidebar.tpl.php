@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 12:02:42
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 13:04:26
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sidebar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19911459074fd8668d6c6f12-41368570%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '76d1d905aaac244b40ece8596ee94e46fe0b3b54' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sidebar.tpl',
-      1 => 1339844559,
+      1 => 1339848254,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<h1 id="sidebar-title"><a href="#"><?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
 </a></h1>		  
 			<!-- Logo (221px wide) -->
-			<a href="#"><img id="logo" src="../assets/images/logo.png" style="width:221px;" alt="<?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
+			<a href="#"><img id="logo" src="/assets/images/logo.png" style="width:221px;" alt="<?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
  logo" /></a> 
 			<!-- Sidebar Profile links -->
 <!--			<div id="profile-links">
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<ul id="main-nav">  <!-- Accordion Menu -->
 				
 				<li>
-					<a href="index.php" class="nav-top-item no-submenu <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+					<a href="/admin/index.php" class="nav-top-item no-submenu <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1){?> <?php }else{ ?>current<?php }?>"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 						Dashboard
 					</a>       
@@ -57,9 +57,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<ul>
 				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
 <?php $_tmp3=ob_get_clean();?><?php if ($_tmp3>1){?>
-						<li><a href="index.php?page=sites&action=add">Add Guess</a></li>
+						<li><a href="/admin/guesses/add">Add Guess</a></li>
 				<?php }?>
-						<li><a href="index.php?page=sites&action=list">List Guesses</a></li>
+						<li><a href="/admin/guesses/list">List Guesses</a></li>
 					</ul>
 				</li>
 				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
@@ -70,11 +70,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						User Manager
 					</a>
 					<ul>
-						<li><a href="index.php?page=users&action=add">Add User</a></li>
-						<li><a href="index.php?page=users&action=list">List Users</a></li>
+						<li><a href="/admin/users/add">Add User</a></li>
+						<li><a href="/admin/users/list">List Users</a></li>
 					</ul>
 				</li>    
-				<li><a class="nav-top-item no-submenu" href="index.php?logout">Sign Out</a></li>  
+				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
 				<?php }?>
 			</ul> <!-- End #main-nav -->
 			<div id="info" style="display:none">
