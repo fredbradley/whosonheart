@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 11:08:13
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 11:56:27
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16265576474fd8668d675d10-43170350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb495a5e0e578b9c2e1e3d8fb2aebaa72553cff2' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl',
-      1 => 1339581144,
+      1 => 1339844184,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fd8668d6c2248_28384201',
   'variables' => 
   array (
     'user' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd8668d6c2248_28384201',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fd8668d6c2248_28384201')) {function content_4fd8668d6c2248_28384201($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
@@ -67,15 +67,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<?php }?>
 				<li><a class="shortcut-button" href="#info" rel="modal"><span>
 					<img src="../assets/images/build-icons/info.png" alt="icon" /></br />Project Info</span></a></li>
-				<li><a class="shortcut-button" href="http://www.fredbradley.co.uk/contact"><span><img src="../assets/images/build-icons/mail.png" alt="icon" /><br />Mail For Help</span></a></li>
-
-				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
-<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2==9){?>
 				<li><a class="shortcut-button" href="#messages" rel="modal"><span>
 					<img src="../assets/images/build-icons/mail.png" alt="icon" /><br />
-					Open Modal
+					Mail For Help
 				</span></a></li>
-				<?php }?>
 				
 			</ul><!-- End .shortcut-buttons-set -->
 			

@@ -37,14 +37,10 @@
 				{/if}
 				<li><a class="shortcut-button" href="#info" rel="modal"><span>
 					<img src="../assets/images/build-icons/info.png" alt="icon" /></br />Project Info</span></a></li>
-				<li><a class="shortcut-button" href="http://www.fredbradley.co.uk/contact"><span><img src="../assets/images/build-icons/mail.png" alt="icon" /><br />Mail For Help</span></a></li>
-
-				{if {$user.acl}==9}
 				<li><a class="shortcut-button" href="#messages" rel="modal"><span>
 					<img src="../assets/images/build-icons/mail.png" alt="icon" /><br />
-					Open Modal
+					Mail For Help
 				</span></a></li>
-				{/if}
 				
 			</ul><!-- End .shortcut-buttons-set -->
 			

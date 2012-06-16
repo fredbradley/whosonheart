@@ -28,6 +28,10 @@
 		$smarty->assign('action', $_GET['action']);
 		if ($_GET['message'])
 			$smarty->assign('message', $systemMsg);
+		if (isset($_GET['emailSent']))
+			$smarty->assign('message', "Thankyou, your email was sent!");
+		if (isset($_GET['error']))
+			$smarty->assign('message', "There was some kind of error, we're not 100% sure what happened, sorry!");
 
         /* DISPLAY PAGE */
                 if (isset($_SESSION['user']['username'])) {

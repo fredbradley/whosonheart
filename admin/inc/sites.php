@@ -12,7 +12,7 @@ if ($_POST) {
                         $error = $db->error("Error in your code matey!");
                         $smarty->assign('dbresult', $error);
                 } else {
-                        $success = successMsg("Oh thanks! That looks like a good site!");
+                        $success = successMsg("Another wrong answer added to the list!");
                         $smarty->assign('dbresult', $success);
                 }
         }
@@ -52,12 +52,12 @@ if ($_POST) {
  **/
         if ($_GET['action']=="edit") {
                 if ($_GET['id']=="") {
-                        $smarty->assign('dbresult', $db->error("Hang on, what site am I editing? Go back and try again!"));
+                        $smarty->assign('dbresult', $db->error("Hang on, what am I editing? Go back and try again!"));
                 } else {
                         $edit = $db->editSite($_GET['id']);
 //              var_dump($edit);
                         if ($edit == "") {
-                                $error = $db->error("There's no site with that ID!");
+                                $error = $db->error("There's no guess with that ID!");
                                 $smarty->assign('dbresult', $error);
                         } else {
                                 $smarty->assign('edit', $edit);
