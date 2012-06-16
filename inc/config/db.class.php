@@ -98,7 +98,7 @@ function addGuess() {
 	$timesguessed = $_POST['timesguessed'];
 	$dateguessed = $_POST['dateguessed'];
 
-	$query = "INSERT INTO ".DB_PREFIX."guesses (firstname, surname, cname, nicknames, timesguessed, dateguessed) VALUES ('$firstname', '$surname', '$cname', '$nicknames', '$timeguessed', '$dateguessed')";
+	$query = "INSERT INTO ".DB_PREFIX."guesses (firstname, surname, cname, nicknames, timesguessed, dateguessed) VALUES ('$firstname', '$surname', '$cname', '$nicknames', '$timesguessed', '$dateguessed')";
 	$result = mysql_query($query);
 return $result;
 }

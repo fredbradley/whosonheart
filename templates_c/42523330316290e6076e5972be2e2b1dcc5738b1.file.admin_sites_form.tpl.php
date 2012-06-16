@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 11:08:22
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 10:51:24
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14305894624fd86696c964e6-79637578%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42523330316290e6076e5972be2e2b1dcc5738b1' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl',
-      1 => 1339581144,
+      1 => 1339840282,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fd86696e02113_39460542',
   'variables' => 
   array (
     'action' => 0,
     'edit' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd86696e02113_39460542',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fd86696e02113_39460542')) {function content_4fd86696e02113_39460542($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
@@ -89,16 +89,17 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sit
  <p>
                                                                         <label>Number of times guessed</label>
                                                                         <input class="text-input small-input" type="text"
-                                                                                id="timesguessed" name="timesguessed" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['timesguessed'];?>
+                                                                                id="timesguessed" name="timesguessed" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['edit']->value['timesguessed'])===null||$tmp==='' ? 1 : $tmp);?>
 " /><br /><small>Maximum 36 Characters</small>
                                                                 </p>
 
 </fieldset>
-<div class="clearfix clear"></div>
 <fieldset class="column-right">
-<p><label>Time Stamp</label><input class="text-input medium-input" id="dateguessed" name="dateguessed" value="<?php echo time();?>
-" readonly /><br /><small><?php echo smarty_modifier_date_format(time());?>
-</small></p>
+<!--<p><label>Time Stamp</label>-->
+<input type="hidden" id="dateguessed" name="dateguessed" value="<?php echo time();?>
+" />
+<!--<br /><small><?php echo smarty_modifier_date_format(time());?>
+</small></p>-->
 
                                                                 <p>
                                                                         <input class="button" type="submit" value="Submit" />

@@ -51,13 +51,14 @@
  <p>
                                                                         <label>Number of times guessed</label>
                                                                         <input class="text-input small-input" type="text"
-                                                                                id="timesguessed" name="timesguessed" value="{$edit.timesguessed}" /><br /><small>Maximum 36 Characters</small>
+                                                                                id="timesguessed" name="timesguessed" value="{$edit.timesguessed|default:1}" /><br /><small>Maximum 36 Characters</small>
                                                                 </p>
 
 </fieldset>
-<div class="clearfix clear"></div>
 <fieldset class="column-right">
-<p><label>Time Stamp</label><input class="text-input medium-input" id="dateguessed" name="dateguessed" value="{$smarty.now}" readonly /><br /><small>{$smarty.now|date_format}</small></p>
+<!--<p><label>Time Stamp</label>-->
+<input type="hidden" id="dateguessed" name="dateguessed" value="{$smarty.now}" />
+<!--<br /><small>{$smarty.now|date_format}</small></p>-->
 
                                                                 <p>
                                                                         <input class="button" type="submit" value="Submit" />
