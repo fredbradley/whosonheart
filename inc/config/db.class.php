@@ -156,23 +156,27 @@ function getrows ($query) {
     return $this->rows;
 }
 function searchGuesses($search="", $field="cname") {
-//	if ($search=="") {
-//		return array("error" => "You must search for something");
-//	}
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	if ($search)
-		$where = " WHERE cname = '".$search."' OR surname='".$search."' OR firstname='".$search."' OR nicknames LIKE '%".$search."%'";
+		$where = " WHERE cname = '".$search."'";
+//."' OR surname='".$search."' OR firstname='".$search."' OR nicknames LIKE '%".$search."%'";
 	$array = $this->getGuesses($query.$where,0);
 	if ($array['error']) {
 		$where = " WHERE nicknames LIKE '%".$search."%'";
 		$array = $this->getGuesses($query.$where, 0);
 		if (!empty($array[0]['guess']['nicknames'])) {
 			if (in_array($search, $array[0]['guess']['nicknames'])) {
-			//	var_dump($array[0]['guess']['nicknames']);
+				var_dump($array[0]['guess']['nicknames']);
 				return $array;
 			} else {
-	                  //      var_dump($array[0]['guess']['nicknames']);
-				return array("error" => "We could not find anything that matched your search term");
+	                        var_dump($array[0]['guess']['nicknames']);
+				$input = explode(" ", $search);
+	var_dump($input);
+				if (!$input[1]) 
+					$output['solution'] = "It doesn't look like you put it two names";
+					$output['error'] = "We could not find what you searched for";
+				return $output;
+//array("error" => "We could not find anything that matched your search term");
 			}
 		} else {
 			return array("error" => "Nothing could be found that matched \"".$search."\", sorry!");
@@ -182,18 +186,20 @@ function searchGuesses($search="", $field="cname") {
 return $array;
 }
 function getGuesses($query, $named=1) {
-	$result = mysql_query($query);
+	$result = mysql_query($query." ORDER BY timesguessed DESC");
 	while($row = mysql_fetch_assoc($result)) {
 		$nickhanes = array();
+		if (substr($row['nicknames'], -1) === ',')
+			$row['nicknames'] = rtrim($row['nicknames'], ",");
 		$nicknamess = explode(", ",$row['nicknames']);
-$i=0;
+		$i=0;
 		foreach ($nicknamess as $nickname) {
 			$nicknames['nn_'.$i] = $nickname;
 			$i++;
 		}
 
 		$dates		= array();
-		$datesguessed		= explode(",",$row['dateguessed']);
+		$datesguessed	= explode(",",$row['dateguessed']);
 		$i=0;
 		foreach ($datesguessed as $date) {
 			$dates['date_'.$i] = $date;
@@ -268,6 +274,7 @@ function escapedata($data) {
 
 /* Close connection */
 function __destruct(){ @mysql_close($this->connection); }
+
 
 }
 ?>

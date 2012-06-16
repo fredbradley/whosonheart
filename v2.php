@@ -24,8 +24,8 @@ if ($_POST) {
 		if ($guess == "") {
 			break;
 		} 
-
-		if (ucwords($guess) == "Tina Turner") {
+		$output = $db->searchGuesses($guess, 'cname');
+/*		if (ucwords($guess) == "Tina Turner") {
 			$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
 			$guessoutput[] = $output;
 			break;
@@ -38,11 +38,13 @@ if ($_POST) {
 		} else {
 			$output = "<p>I found \"".ucwords($xml->guess->name->full_name)."\" who has been guessed ".pluralise($xml->guess->timesguess)."!</p>";
 		}	//	var_dump($xml);
-
+*/
 	$guessoutput[] = $output;
 	}
+echo "<pre>";
 	var_dump($guessoutput);
 	var_dump($_POST);
+echo "</pre>";
 }
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
@@ -66,7 +68,9 @@ if ($_POST) {
 			$output = $xml->toXML($array, 'guesses');
 			echo ($output);*/
 		} else {
-			var_dump($array);
+//	echo "<pre>";
+//			var_dump($array);
+//	echo "</pre>";
 		}
 
 	/* SMARTY ASSIGNS */
@@ -81,7 +85,7 @@ if ($_POST) {
 	if (isset($_GET['xml'])) {
 		$smarty->display('site_xml.tpl');
 	} else {
-		$smarty->display('site_whosonheart.tpl');
+		$smarty->display('site_output.tpl');
 	}
 
 

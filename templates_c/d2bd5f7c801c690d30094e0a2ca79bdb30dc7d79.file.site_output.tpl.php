@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-15 22:09:48
-         compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/site_whosonheart.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:8120149594fd8667c9f8c90-73985481%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-15 22:27:31
+         compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/site_output.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:185597484fdba8c397c344-30914206%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '7dc8aa1b5ec30c6d4d58a3383738176a4d5795d0' => 
+    'd2bd5f7c801c690d30094e0a2ca79bdb30dc7d79' => 
     array (
-      0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/site_whosonheart.tpl',
-      1 => 1339794580,
+      0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/site_output.tpl',
+      1 => 1339795630,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '8120149594fd8667c9f8c90-73985481',
+  'nocache_hash' => '185597484fdba8c397c344-30914206',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd8667ca20556_62949376',
   'variables' => 
   array (
     'guessoutput' => 0,
     'guess' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdba8c39be7b2_17939734',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fd8667ca20556_62949376')) {function content_4fd8667ca20556_62949376($_smarty_tpl) {?><html>
+<?php if ($_valid && !is_callable('content_4fdba8c39be7b2_17939734')) {function content_4fdba8c39be7b2_17939734($_smarty_tpl) {?><html>
 <head>
 <style>
 input[type="text"] {
