@@ -116,6 +116,7 @@ return $result;
 }
 
 function updateGuess($id) {
+global $ROOT_PATH;
 	$getdates = "SELECT dateguessed FROM ".DB_PREFIX."guesses WHERE id=".$id;
 	$getdate = mysql_query($getdates);
 	$date = mysql_result($getdate,0);
@@ -128,6 +129,18 @@ function updateGuess($id) {
 	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed', dateguessed='$dateguessed'";
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
+	
+	$table_name = DB_PREFIX."guesses";
+	$backup_file = "".$ROOT_PATH."database_backups/backup_guesses".date('YmdHis').".sql";
+	$sql = "SELECT * INTO OUTFILE '$backup_file' FROM $table_name";
+	$retval = mysql_query($sql);
+	if(!$retval)
+		die ('Could not do the backup stuff: '.mysql_error());
+
+	$command = "mysqldump --opt --host=".DB_HOST." --user=".DB_USER." --password=".DB_PASSWORD." ".DB_DATABASE." > ".$ROOT_PATH."database_backups/ibackup".time().".sql";
+	system($command, $return);
+	echo "Backup data success!".$return;
+
 return $result;
 }
 function editSite($id) {
