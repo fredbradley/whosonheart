@@ -24,7 +24,6 @@
 		$stats = $db->usefulStats();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
-
 	/* SMARTY ASSIGNS */
 		$smarty->assign('stats', $stats);
 		$smarty->assign('user', $user);

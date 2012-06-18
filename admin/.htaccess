@@ -1,5 +1,5 @@
 RewriteEngine On
-
+RewriteBase /admin
 RewriteRule ^guesses/([a-z0-9]+)(/)?$ index.php?page=sites&action=$1 [L]
 RewriteRule ^guesses/([a-z0-9]+)/([0-9]+)(/)?$ index.php?page=sites&action=$1&id=$2 [L]
 RewriteRule ^guesses/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)(/)?$ index.php?page=sites&action=$1&sort=$2&order=$3 [L]

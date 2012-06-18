@@ -14,7 +14,7 @@
 		} else { 
 			$ROOT_PATH = "/Users/fredbradley/Sites/smarty_site/";
 		}
-		$SITE_PATH = $ROOT_PATH."whosonheart/";
+		$SITE_PATH = $ROOT_PATH."dev_whosonheart/";
 		
 
 	/* INCLUDE SMARTY THINGS */
