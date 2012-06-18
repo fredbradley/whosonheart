@@ -1,2 +1,3 @@
 RewriteEngine On
 
+RewriteRule ^xml/?$ v2.php [L]

@@ -14,72 +14,42 @@
 	/* LOAD CONFIG (each file) */
 		require_once 'inc/config/siteconfigs.php';
 
-	/* LOAD VARIABLES */
-		$debugformat = array('nositefound' => "Sorry, theres not site configured for your URL");
-		$debug = $db->error($debugformat['nositefound']);
-
 	$guessoutput = array();
-if ($_POST) {
-	foreach ($_POST as $guess) {
-		if ($guess == "") {
-			break;
-		} 
-		$output = $db->searchGuesses($guess, 'cname');
-/*		if (ucwords($guess) == "Tina Turner") {
-			$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
-			$guessoutput[] = $output;
-			break;
+	if ($_GET) {
+		$addAnalytics = $db->guessMade();
+		foreach ($_GET as $guess) {
+			if ($guess == "") {
+				break;
+			} 
+			$iguess = $db->searchGuesses(strtolower($guess));
+			if (ucwords($guess) == "Tina Turner") {
+				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
+				$guessoutput[] = $output;
+			} else {
+				if ($iguess['guess']['error'] OR $iguess['error']) {
+					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
+				} else {
+					$output = "<p>I found \"".trim(ucwords($iguess[0]['guess']['name']['full_name']))."\" who has been guessed ".pluralise($iguess[0]['guess']['timesguess'])."!</p>";
+				}	
+				$guessoutput[] = $output;
+			}
 		}
-
-		echo "Guess: ".$guess."<br />";
-		$xml = simplexml_load_file("http://who.fredb.me/index.php?xml&search=".$guess);
-		if ($xml->error) {
-			$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". playagain(time())."!</p>";
-		} else {
-			$output = "<p>I found \"".ucwords($xml->guess->name->full_name)."\" who has been guessed ".pluralise($xml->guess->timesguess)."!</p>";
-		}	//	var_dump($xml);
-*/
-	$guessoutput[] = $output;
 	}
-echo "<pre>";
-	var_dump($guessoutput);
-	var_dump($_POST);
-echo "</pre>";
-}
+
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
 	//	$query = $db->getGuesses("SELECT * FROM ".DB_PREFIX."guesses");
-		$array = $db->searchGuesses($_GET['search'], $_GET['field']);
+	//	$array = $db->searchGuesses($_GET['search'], $_GET['field']);
 
-		if (isset($_GET['xml'])) {
-			header ("Content-Type:text/xml");
-			$student_info = $array;
-
-			// creating object of SimpleXMLElement
-			$xml_student_info = new SimpleXMLElement("<?xml version=\"1.0\"?><guesses></guesses>");
-
-			// function call to convert array to xml
-			array_to_xml($array,$xml_student_info);
-
-			//saving generated xml file
-			//$xml_student_info->asXML('file path and name');
-			print $xml_student_info->asXML();
-		/*	$xml = new ArrayToXML();
-			$output = $xml->toXML($array, 'guesses');
-			echo ($output);*/
-		} else {
-//	echo "<pre>";
-//			var_dump($array);
-//	echo "</pre>";
-		}
-
+$nextplay = $db->nextPlay();
 	/* SMARTY ASSIGNS */
+		$smarty->assign('nextplay', $nextplay);
 		$smarty->assign('guesses', $guessoutput);
-		$smarty->assign('guess', $_POST);
-		$smarty->assign('SITE', $site);
-		$smarty->assign('TITLE', $site['title']);
-		$smarty->assign('error', $debug);
-		$smarty->assign('FACEPAGE', $fanpage);
+		$smarty->assign('guess', $_GET);
+//		$smarty->assign('SITE', $site);
+//		$smarty->assign('TITLE', $site['title']);
+//		$smarty->assign('error', $debug);
+//		$smarty->assign('FACEPAGE', $fanpage);
 
 	/* DISPLAY PAGE */
 	if (isset($_GET['xml'])) {
@@ -89,23 +59,6 @@ echo "</pre>";
 	}
 
 
-function array_to_xml($student_info, &$xml_student_info) {
-    foreach($student_info as $key => $value) {
-        if(is_array($value)) {
-            if(!is_numeric($key)){
-                $subnode = $xml_student_info->addChild("$key");
-                array_to_xml($value, $subnode);
-            }
-            else{
-                array_to_xml($value, $xml_student_info);
-            }
-        }
-        else {
-            $xml_student_info->addChild("$key","$value");
-        }
-    }
-}
-
 function pluralise($int) {
 	if ($int > 1) {
 		return $int ." times";
@@ -114,8 +67,5 @@ function pluralise($int) {
 	} elseif ($int < 1) {
 		return $int ." times";
 	}
-}
-function playagain($time) {
-	return $time;
 }
 ?>

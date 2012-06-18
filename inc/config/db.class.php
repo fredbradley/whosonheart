@@ -155,6 +155,9 @@ function getrows ($query) {
     mysql_free_result($this->result);
     return $this->rows;
 }
+/************************************************************************************
+** SEARCH GUESSES
+*************************************************************************************/
 function searchGuesses($search="", $field="cname") {
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	if ($search)
@@ -166,17 +169,18 @@ function searchGuesses($search="", $field="cname") {
 		$array = $this->getGuesses($query.$where, 0);
 		if (!empty($array[0]['guess']['nicknames'])) {
 			if (in_array($search, $array[0]['guess']['nicknames'])) {
-				var_dump($array[0]['guess']['nicknames']);
+		//		var_dump($array[0]['guess']['nicknames']);
 				return $array;
 			} else {
-	                        var_dump($array[0]['guess']['nicknames']);
+	       //               var_dump($array[0]['guess']['nicknames']);
 				$input = explode(" ", $search);
-	var_dump($input);
-				if (!$input[1]) 
-					$output['solution'] = "It doesn't look like you put it two names";
-					$output['error'] = "We could not find what you searched for";
+//	var_dump($input);
+				if (!$input[1]) {
+					$output['guess']['error'] = "It doesn't look like you put it two names";
+				} else {
+					$output['guess']['error'] = "We could not find what you searched for";
+				}
 				return $output;
-//array("error" => "We could not find anything that matched your search term");
 			}
 		} else {
 			return array("error" => "Nothing could be found that matched \"".$search."\", sorry!");
@@ -185,6 +189,37 @@ function searchGuesses($search="", $field="cname") {
 //	echo $query.$where;
 return $array;
 }
+function search_Guesses($search) {
+	if ($search == "") {
+		$output['error'] = "Search field blank";
+	} else {
+		$query = "SELECT * FROM ".DB_PREFIX."guesses";
+		$where = " WHERE cname LIKE '".$search."'";
+		$array = $this->getGuesses($query.$where,0);
+		if ($array['error']) {
+			$where = " WHERE nicknames LIKE '%".$search."%'";
+			$array = $this->getGuesses($query.$where,0);
+			if (!empty($array[0]['guess']['nicknames'])) {
+				if (in_array($search, $array[0]['guess']['nicknames'])) {
+					$output = $array[0];
+				} else {
+					$input = explode(" ", $search);
+					if (!$input[1]) {
+						$output['guess']['error'] = "It looks like you only search for one name. Try using a first name and surname!";
+					} else {
+						$output['guess']['error'] = "I searched high and low, and couldn't find anything in our library for you";
+					}
+				}
+			} else {
+				$output['guess']['error'] = "I even searched nicknames, and found nothing!";
+			}
+		} else {
+		//	$output = $array;
+		}
+	}
+return $output;
+}
+
 function getGuesses($query, $named=1) {
 	$result = mysql_query($query." ORDER BY timesguessed DESC");
 	while($row = mysql_fetch_assoc($result)) {
@@ -207,7 +242,7 @@ function getGuesses($query, $named=1) {
 		}
 		$name['firstname'] = $row['firstname'];
 		$name['surname'] = $row['surname'];
-		$name['full_name'] = $row['cname'];
+		$name['full_name'] = trim($row['cname']);
 		$loop['name'] = $name;
 		$loop['nicknames'] 		= $nicknames;
 		$loop['timesguess']		= $row['timesguessed'];
@@ -223,14 +258,6 @@ function getGuesses($query, $named=1) {
 		$output['error'] = "No Match Found";
 //	mysql_free_result($result);
 return $output;
-}
-function UgetMenu($parent) {
-	$query = "SELECT * FROM ".DB_PREFIX."menu WHERE menu='$parent' AND published=1";
-	$this->result = mysql_query($query);
-	while($row = mysql_fetch_assoc($this->result)) {
-		$output[] = $row;
-	}
-	return $output;
 }
 function getUsers() {
 	$query = "SELECT * FROM ".DB_PREFIX."users";
@@ -292,7 +319,9 @@ function nextPlay() {
 	}
 return $output;
 }
-
+function guessMade() {
+	//Add to Database	
+}
 /* Count Number of rows query */
 function count ($query) {
   $this->result = mysql_query($query);
