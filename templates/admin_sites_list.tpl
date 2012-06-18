@@ -8,8 +8,11 @@
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-<span class="meta">Sort by: <a href="?sort=surname">Me</a></span>
-                                                <table>
+<span class="meta">Sort by: <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span>
+<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
+<!-- <input type="submit" class="button" value="Search" /> -->
+</form></div>   
+ <table>
 
                                                         <thead>
                                                                 <tr>
@@ -50,13 +53,13 @@
                                                 {foreach $sites as $site}
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="edit/{$site.id}">{$site.firstname|capitalize} {$site.surname|capitalize}</a></td>
+                                                                        <td><a href="/admin/guesses/edit/{$site.id}">{$site.firstname|capitalize} {$site.surname|capitalize}</a></td>
                                                                         <td>{$site.timesguessed}</td>
 									{assign var="lastupdated" value="{$site.dateguessed|substr:-10}"}
                                                                         <td>{$lastupdated|relative_date}</td>
                                                                         <td>
-                                                                                <a href="edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                                <a href="/admin/guesses/edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="/admin/guesses/delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 

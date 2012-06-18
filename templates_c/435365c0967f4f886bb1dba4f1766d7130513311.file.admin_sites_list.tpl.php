@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:34:20
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 17:40:48
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5608030484fdf3c6c8c6d59-77408916%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '435365c0967f4f886bb1dba4f1766d7130513311' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1339848399,
+      1 => 1340037643,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf3c6cabf7c8_36402443',
   'variables' => 
   array (
     'sites' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lastupdated' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf3c6cabf7c8_36402443',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf3c6cabf7c8_36402443')) {function content_4fdf3c6cabf7c8_36402443($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.relative_date.php';
@@ -37,8 +37,11 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-<span class="meta">Sort by: <a href="?sort=surname">Me</a></span>
-                                                <table>
+<span class="meta">Sort by: <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span>
+<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
+<!-- <input type="submit" class="button" value="Search" /> -->
+</form></div>   
+ <table>
 
                                                         <thead>
                                                                 <tr>
@@ -83,7 +86,7 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 ?>
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                        <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['firstname']);?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['surname']);?>
 </a></td>
@@ -94,9 +97,9 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
                                                                         <td>
-                                                                                <a href="edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                                <a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 " title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 " title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>

@@ -58,5 +58,4 @@
 				DD_belatedPNG.fix('.png_bg, img, li');
 			</script>
 		<![endif]-->
-		
 	</head>

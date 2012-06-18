@@ -1,7 +1,9 @@
 <?php
-
-$sites = $db->getSites($_GET['sort'], $_GET['order']);
-
+if ($_POST['searchfield']) {
+	$sites = $db->getSites($_GET['sort'], $_GET['order'], $_POST['searchfield']);
+} else {
+	$sites = $db->getSites($_GET['sort'], $_GET['order']);
+}
 /***
  * Add New Site
  **/

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:46:27
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 17:14:16
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:930791864fdf3f43e27e24-43974954%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42523330316290e6076e5972be2e2b1dcc5738b1' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_form.tpl',
-      1 => 1339848494,
+      1 => 1340036053,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf3f4407f402_96997949',
   'variables' => 
   array (
     'action' => 0,
     'edit' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf3f4407f402_96997949',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf3f4407f402_96997949')) {function content_4fdf3f4407f402_96997949($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sites/smarty_site/libs/plugins/modifier.date_format.php';
@@ -55,7 +55,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/Users/fredbradley/Sit
 <div style="clear:both;"></div></form>
 <?php }else{ ?>
 
-   <form action="admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+   <form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->

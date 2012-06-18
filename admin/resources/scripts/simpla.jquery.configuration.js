@@ -93,6 +93,21 @@ $(document).ready(function(){
 		
 		$(".wysiwyg").wysiwyg(); // Applies WYSIWYG editor to any textarea with the class "wysiwyg"
 
+
+
+$('.searchfield').each(function() {
+    var default_value = this.value;
+    $(this).focus(function() {
+        if(this.value == default_value) {
+            this.value = '';
+        }
+    });
+    $(this).blur(function() {
+        if(this.value == '') {
+            this.value = default_value;
+        }
+    });
+});
 });
   
   

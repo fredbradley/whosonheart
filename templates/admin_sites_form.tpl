@@ -23,7 +23,7 @@
 <div style="clear:both;"></div></form>
 {else}
 
-   <form action="admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
+   <form action="/admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 <input type="hidden" name="id" id="id" value="{$edit.id}" />

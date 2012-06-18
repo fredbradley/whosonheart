@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:07:54
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 17:45:37
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_head.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:177871334fdf363a0fc545-85812697%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '608f7559c0b411ed236e1b046c2c0fe60ed4bfda' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_head.tpl',
-      1 => 1339845661,
+      1 => 1340037893,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_4fdf363a148265_65169945',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf363a148265_65169945')) {function content_4fdf363a148265_65169945($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -79,6 +79,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				DD_belatedPNG.fix('.png_bg, img, li');
 			</script>
 		<![endif]-->
-		
 	</head>
 <?php }} ?>
