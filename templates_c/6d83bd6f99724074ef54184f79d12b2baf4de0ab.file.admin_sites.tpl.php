@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-13 11:08:22
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:34:20
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:18052481324fd86696c373a1-11615944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:8218714114fdf3c6c7f4be9-54602544%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18052481324fd86696c373a1-11615944',
+  'nocache_hash' => '8218714114fdf3c6c7f4be9-54602544',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd86696c8f258_78554200',
+  'unifunc' => 'content_4fdf3c6c8bf491_86162767',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fd86696c8f258_78554200')) {function content_4fd86696c8f258_78554200($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_4fdf3c6c8bf491_86162767')) {function content_4fdf3c6c8bf491_86162767($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
 
 	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->

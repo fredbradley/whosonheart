@@ -7,18 +7,20 @@
 ** Fred Bradley +44 (0) 7867 953 849  **
 ** fred@fredbradley.co.uk             **
 ***************************************/
-
 	/* Page Setup */
 		session_start();
-
 	/* LOAD CONFIG (each file) */
 		require_once '../inc/config/siteconfigs.php';
 		require_once '../inc/config/login.php';
 
 	/* LOAD VARIABLES */
 		$user = $_SESSION['user'];
+	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
+	}
+	if (isset($_GET['message'])) {
 		$systemMsg = systemMsg($_GET['message']);
+	}
 		$stats = $db->usefulStats();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
@@ -26,14 +28,19 @@
 	/* SMARTY ASSIGNS */
 		$smarty->assign('stats', $stats);
 		$smarty->assign('user', $user);
+	if (isset($page)) {
 		$smarty->assign('page', $page);
+	}
+	if (isset($_GET['action'])) {
 		$smarty->assign('action', $_GET['action']);
-		if ($_GET['message'])
+	}
+		if (isset($_GET['message']))
 			$smarty->assign('message', $systemMsg);
 		if (isset($_GET['emailSent']))
 			$smarty->assign('message', "Thankyou, your email was sent!");
 		if (isset($_GET['error']))
 			$smarty->assign('message', "There was some kind of error, we're not 100% sure what happened, sorry!");
+
 
         /* DISPLAY PAGE */
                 if (isset($_SESSION['user']['username'])) {
@@ -49,6 +56,9 @@
 					$smarty->display('admin_sites.tpl');
 					break;
 				default:
+					include_once 'inc/answers.php';
+					$answers = $db->getConfig();
+					$smarty->assign('answers', $answers);
 					$smarty->display('admin.tpl');
 					break;
 			}

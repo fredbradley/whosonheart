@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 13:04:26
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:07:54
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sidebar.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:19911459074fd8668d6c6f12-41368570%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:6331610184fdf363a14b618-78949723%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19911459074fd8668d6c6f12-41368570',
+  'nocache_hash' => '6331610184fdf363a14b618-78949723',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd8668d6f6d46_47062575',
   'variables' => 
   array (
     'SITE' => 0,
@@ -24,8 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf363a1d2ff2_32593638',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fd8668d6f6d46_47062575')) {function content_4fd8668d6f6d46_47062575($_smarty_tpl) {?>		<!-- SIDE BAR STARTS HERE -->
+<?php if ($_valid && !is_callable('content_4fdf363a1d2ff2_32593638')) {function content_4fdf363a1d2ff2_32593638($_smarty_tpl) {?>		<!-- SIDE BAR STARTS HERE -->
 		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->			
 			<h1 id="sidebar-title"><a href="#"><?php echo $_smarty_tpl->tpl_vars['SITE']->value['name'];?>
 </a></h1>		  

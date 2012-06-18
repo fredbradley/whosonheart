@@ -62,7 +62,6 @@
 						<h4>Maecenas dignissim</h4>
 						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
-						<p><strong>Most Recent Edit:</strong> {$stats.recentedit}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
 						
 					</div> <!-- End #tab3 -->        
@@ -75,19 +74,14 @@
 				
 				<div class="content-box-header"> <!-- Add the class "closed" to the Content box header to have it closed by default -->
 					
-					<h3>Not so useful stats</h3>
+					<h3>Correct Answers</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
 				<div class="content-box-content">
 					
 					<div class="tab-content default-tab">
-					
-						<h4>This box is closed by default</h4>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porta lectus. Maecenas dignissim enim quis ipsum mattis aliquet. Maecenas id velit et elit gravida bibendum. Duis nec rutrum lorem. Donec egestas metus a risus euismod ultricies. Maecenas lacinia orci at neque commodo commodo.
-						</p>
-						
+					{include file="admin_config.tpl"}
 					</div> <!-- End #tab3 -->        
 					
 				</div> <!-- End .content-box-content -->

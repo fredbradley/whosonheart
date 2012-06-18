@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-16 14:01:09
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:59:13
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:16265576474fd8668d675d10-43170350%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:5489430344fdf363a0920c1-96696391%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'eb495a5e0e578b9c2e1e3d8fb2aebaa72553cff2' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl',
-      1 => 1339851668,
+      1 => 1340031553,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16265576474fd8668d675d10-43170350',
+  'nocache_hash' => '5489430344fdf363a0920c1-96696391',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fd8668d6c2248_28384201',
+  'unifunc' => 'content_4fdf363a0f8d11_57753379',
   'variables' => 
   array (
     'user' => 0,
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fd8668d6c2248_28384201')) {function content_4fd8668d6c2248_28384201($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_4fdf363a0f8d11_57753379')) {function content_4fdf363a0f8d11_57753379($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
 
 	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
@@ -95,8 +95,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </p>
 						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
 </p>
-						<p><strong>Most Recent Edit:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['recentedit'];?>
-</p>
 						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
 </p>
 						
@@ -110,19 +108,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="content-box-header"> <!-- Add the class "closed" to the Content box header to have it closed by default -->
 					
-					<h3>Not so useful stats</h3>
+					<h3>Correct Answers</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
 				<div class="content-box-content">
 					
 					<div class="tab-content default-tab">
-					
-						<h4>This box is closed by default</h4>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porta lectus. Maecenas dignissim enim quis ipsum mattis aliquet. Maecenas id velit et elit gravida bibendum. Duis nec rutrum lorem. Donec egestas metus a risus euismod ultricies. Maecenas lacinia orci at neque commodo commodo.
-						</p>
-						
+					<?php echo $_smarty_tpl->getSubTemplate ("admin_config.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
 					</div> <!-- End #tab3 -->        
 					
 				</div> <!-- End .content-box-content -->

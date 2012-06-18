@@ -45,6 +45,18 @@ function showError($error) {
 /************************************************************************************
 ** USER FUNCTIONS
 *************************************************************************************/
+function addAnswer($answer, $listener, $newslink, $word) {
+	$query = "INSERT INTO ".DB_PREFIX."configs ";
+	$query .= "(name, listener, time, newslink, word) VALUES ";
+	$query .= "('".$answer."', '".$listener."', '".time()."', '".$newslink."', '".$word."')";
+	$result = mysql_query($query);
+	return $result;
+}
+function delAnswer($answer) {
+	$query = "DELETE FROM ".DB_PREFIX."configs WHERE name='".strtolower($answer)."'";
+	$result = mysql_query($query);
+	return $result;
+}
 function addUser($username, $first_name, $last_name, $email, $passwd, $acl) {
 	$passwd = md5($passwd);
 	$query = "INSERT INTO ".DB_PREFIX."users ";
@@ -154,6 +166,13 @@ function getrows ($query) {
 
     mysql_free_result($this->result);
     return $this->rows;
+}
+function getConfig() {
+	$query = "SELECT * FROM ".DB_PREFIX."configs";
+	$table = mysql_query($query);
+	while($r = mysql_fetch_assoc($table))
+		$output[] = $r;
+return $output;
 }
 /************************************************************************************
 ** SEARCH GUESSES
@@ -293,6 +312,7 @@ function usefulStats() {
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
 	$output['nextplay'] = $this->nextPlay();
+
 	return $output;
 }
 
