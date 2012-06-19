@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 10:42:28
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 15:39:12
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_whosonheart.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4771359134fc1330e746a35-35920352%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '31c5059e7075112050875c31472fd059ccdf54f2' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_whosonheart.tpl',
-      1 => 1340098572,
+      1 => 1340116751,
       2 => 'file',
     ),
   ),
@@ -40,20 +40,43 @@ input.button {
 	margin:10px;
 	font-weight:bold;
 }
+body {
+	margin:0px;
+}
+div#container {
+	margin:auto;
+	width:1010px;
+	background:url('http://heartfm.gcstatic.com//d/heart.co.uk/img/bg-body__79b71cfc.gif');
+}
+div#header img {
+	width:1000px;
+	margin:auto;
+	margin:5px;
+}
+div#output {
+	margin:auto;
+}
 </style>
 </head>
 <body>
-<?php echo $_smarty_tpl->tpl_vars['guessoutput']->value;?>
+<div id="container">
+<div id="header">
+<img src="http://assets.gcstatic.com/u/apps/asset_manager/uploaded/2012/24/whos-on-heart-june-2-1339358753.jpeg"/>
+</div>
+<div id="output">
+	<?php echo $_smarty_tpl->tpl_vars['guessoutput']->value;?>
 
-<form name="search" method="get" action="v2.php">
-<input type="text" name="guess1" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess1'];?>
+	<form name="search" method="get" action="/xml">
+		<input type="text" name="guess1" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess1'];?>
 " /><br />
-<input type="text" name="guess2" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess2'];?>
+		<input type="text" name="guess2" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess2'];?>
 " /><br />
-<input type="text" name="guess3" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess3'];?>
+		<input type="text" name="guess3" value="<?php echo $_smarty_tpl->tpl_vars['guess']->value['guess3'];?>
 " /><br />
-<input class="button" type="submit" />
-</form>
+		<input class="button" type="submit" />
+	</form>
+</div>
+</div>
 </body>
 </html>
 <?php }} ?>
