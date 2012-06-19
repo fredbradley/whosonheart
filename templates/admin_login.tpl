@@ -4,7 +4,7 @@
 			<div id="login-top">
 				<h1>{$SITE.name}</h1>
 				<!-- Logo (221px width) -->
-				<img id="logo" src="../assets/images/logo.png" alt="{$SITE.name} logo" />
+				<img id="logo" src="/assets/images/logo.png" alt="{$SITE.name} logo" />
 			</div> <!-- End #logn-top -->
 			<div id="login-content">
 				<form action="index.php" method="POST">
