@@ -59,8 +59,8 @@
 					
 					<div class="tab-content default-tab">
 					
-						<h4>Maecenas dignissim</h4>
-						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
+					<!--	<h4>Maecenas dignissim</h4>
+					-->	<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
 						
