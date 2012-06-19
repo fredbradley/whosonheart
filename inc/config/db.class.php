@@ -301,7 +301,7 @@ function getUsers() {
 }
 function getSites($sort="surname", $order="ASC", $where) {
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
-	if (isset($where)) {
+	if ($where != "") {
 		$query = $query." WHERE cname='".$where."'";
 	}
 	if (isset($_GET['sort']))

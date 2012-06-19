@@ -11,10 +11,11 @@
 	/* DEFINES PATHS */
 		if ($_SERVER['SERVER_ADDR'] != "127.0.0.1") {
 			$ROOT_PATH = "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/";
+			$SITE_PATH = $ROOT_PATH."dev_whosonheart/";
 		} else { 
 			$ROOT_PATH = "/Users/fredbradley/Sites/smarty_site/";
+			$SITE_PATH = $ROOT_PATH."whosonheart/";
 		}
-		$SITE_PATH = $ROOT_PATH."dev_whosonheart/";
 		
 
 	/* INCLUDE SMARTY THINGS */
