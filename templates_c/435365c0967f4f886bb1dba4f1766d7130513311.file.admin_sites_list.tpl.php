@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 17:40:48
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 10:23:43
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5608030484fdf3c6c8c6d59-77408916%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '435365c0967f4f886bb1dba4f1766d7130513311' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1340037643,
+      1 => 1340097820,
       2 => 'file',
     ),
   ),
@@ -64,16 +64,18 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
                                                                                                 <option value="option3">Delete</option>
                                                                                         </select>
                                                                                         <a class="button" href="#">Apply to selected</a>
-                                                                                </div>
+                                                                                </div> -->
 
                                                                                 <div class="pagination">
-                                                                                        <a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
-                                                                                        <a href="#" class="number" title="1">1</a>
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']-1;?>
+" title="Previous Page">&laquo; Previous</a>
+<!--                                                                                        <a href="#" class="number" title="1">1</a>
                                                                                         <a href="#" class="number" title="2">2</a>
                                                                                         <a href="#" class="number current" title="3">3</a>
-                                                                                        <a href="#" class="number" title="4">4</a>
-                                                                                        <a href="#" title="Next Page">Next &raquo;</a><a href="#" title="Last Page">Last &raquo;</a>
-                                                                                </div> --> <!-- End .pagination -->
+                                                                                        <a href="#" class="number" title="4">4</a> -->
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']+1;?>
+" title="Next Page">Next &raquo;</a>
+                                                                                </div> <!-- End .pagination -->
                                                                                 <div class="clear"></div>
                                                                         </td>
                                                                 </tr>
