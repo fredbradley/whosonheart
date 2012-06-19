@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:39:08
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 14:32:12
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sidebar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19369074884fc0d625078f15-25407239%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '80d47de763d2a34e9872038af84ad99da9ef8cb4' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sidebar.tpl',
-      1 => 1340098572,
+      1 => 1340109128,
       2 => 'file',
     ),
   ),
@@ -74,8 +74,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<li><a href="/admin/users/list">List Users</a></li>
 					</ul>
 				</li>    
-				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
 				<?php }?>
+				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
+				
 			</ul> <!-- End #main-nav -->
 			<div id="info" style="display:none">
 			<h3>Project Info</h3>

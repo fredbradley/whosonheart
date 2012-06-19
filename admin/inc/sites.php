@@ -25,6 +25,7 @@ if ($_POST) {
                         $smarty->assign('dbresult', $error);
                 } else {
                         $success = successMsg("Now, I've moved some things around and that's all good!");
+			
                         $smarty->assign('dbresult', $success);
                 }
         }

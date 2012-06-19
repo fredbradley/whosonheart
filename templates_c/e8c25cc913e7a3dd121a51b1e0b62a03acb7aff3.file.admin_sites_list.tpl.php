@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:43:00
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 14:27:09
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1861564494fc0e541491363-17997542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e8c25cc913e7a3dd121a51b1e0b62a03acb7aff3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1340098572,
+      1 => 1340108724,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,7 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-<span class="meta">Sort by: <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span>
+<span class="meta">Sort by: <a href="/admin/guesses/list/firstname/asc">First Name</a> | <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span>
 <div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
 <!-- <input type="submit" class="button" value="Search" /> -->
 </form></div>   

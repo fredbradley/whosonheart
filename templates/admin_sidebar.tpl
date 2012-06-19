@@ -38,8 +38,9 @@
 						<li><a href="/admin/users/list">List Users</a></li>
 					</ul>
 				</li>    
-				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
 				{/if}
+				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
+				
 			</ul> <!-- End #main-nav -->
 			<div id="info" style="display:none">
 			<h3>Project Info</h3>

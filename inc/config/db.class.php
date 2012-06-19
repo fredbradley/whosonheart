@@ -129,6 +129,7 @@ global $ROOT_PATH;
 	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed', dateguessed='$dateguessed'";
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
+
 /* Backup not working on remote database 	
 	$table_name = DB_PREFIX."guesses";
 	$backup_file = "".$ROOT_PATH."database_backups/backup_guesses".date('YmdHis').".sql";
