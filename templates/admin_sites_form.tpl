@@ -24,8 +24,9 @@
 {else}
 
    <form action="/admin/index.php?{$smarty.server.QUERY_STRING}" method="post">
-
-                                                        <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+{if {$action}=='edit'}
+<input type="hidden" name="returnmeto" value="{$smarty.server.HTTP_REFERER}" />
+      {/if}                                                  <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 <input type="hidden" name="id" id="id" value="{$edit.id}" />
 
                                                                 <p>

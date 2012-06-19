@@ -52,7 +52,10 @@
 				case "sites":
 					include_once 'inc/sites.php';
 					$smarty->assign('sites', $sites);
-					$smarty->display('admin_sites.tpl');
+//					$smarty->display('admin_sites.tpl');
+					if ($_POST['returnmeto'])
+						header("Location:".$_POST['returnmeto']."?returnmeto=edited");
+				$smarty->display('admin_sites.tpl');
 					break;
 				default:
 					include_once 'inc/answers.php';

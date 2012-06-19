@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 15:07:54
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 13:54:01
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sidebar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6331610184fdf363a14b618-78949723%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '76d1d905aaac244b40ece8596ee94e46fe0b3b54' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_sidebar.tpl',
-      1 => 1339848254,
+      1 => 1340110402,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf363a1d2ff2_32593638',
   'variables' => 
   array (
     'SITE' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'page' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf363a1d2ff2_32593638',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf363a1d2ff2_32593638')) {function content_4fdf363a1d2ff2_32593638($_smarty_tpl) {?>		<!-- SIDE BAR STARTS HERE -->
 		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->			
@@ -74,8 +74,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<li><a href="/admin/users/list">List Users</a></li>
 					</ul>
 				</li>    
-				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
 				<?php }?>
+				<li><a class="nav-top-item no-submenu" href="/admin/index.php?logout">Sign Out</a></li>  
+				
 			</ul> <!-- End #main-nav -->
 			<div id="info" style="display:none">
 			<h3>Project Info</h3>
