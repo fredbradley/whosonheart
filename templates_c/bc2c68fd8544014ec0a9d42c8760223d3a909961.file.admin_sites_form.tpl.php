@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-07 13:14:32
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:41:48
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2404162024fc0d71018a289-98631774%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bc2c68fd8544014ec0a9d42c8760223d3a909961' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_form.tpl',
-      1 => 1339067670,
+      1 => 1340098572,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 
 <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_tmp1=='delete'){?>
-<form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+<form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 <fieldset class="column-left">
 <p>Are you 100% sure you want to delete <span class="highlight"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['edit']->value['cname']);?>
@@ -47,7 +47,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 <p>There is no recovering this method, apart from adding the entire content again!</p>
 </fieldset>
 <fieldset class="column-right">
-<fieldset class="column-left"><a href="index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
+<fieldset class="column-left"><a href="/admin/index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
 <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
 " />
 </fieldset><fieldset class="column-right"><input type="submit" class="button-confirm" name="confirm-delete" value="Confirm" />
@@ -55,7 +55,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 <div style="clear:both;"></div></form>
 <?php }else{ ?>
 
-   <form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+   <form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
@@ -89,16 +89,17 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
  <p>
                                                                         <label>Number of times guessed</label>
                                                                         <input class="text-input small-input" type="text"
-                                                                                id="timesguessed" name="timesguessed" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['timesguessed'];?>
+                                                                                id="timesguessed" name="timesguessed" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['edit']->value['timesguessed'])===null||$tmp==='' ? 1 : $tmp);?>
 " /><br /><small>Maximum 36 Characters</small>
                                                                 </p>
 
 </fieldset>
-<div class="clearfix clear"></div>
 <fieldset class="column-right">
-<p><label>Time Stamp</label><input class="text-input medium-input" id="dateguessed" name="dateguessed" value="<?php echo time();?>
-" readonly /><br /><small><?php echo smarty_modifier_date_format(time());?>
-</small></p>
+<!--<p><label>Time Stamp</label>-->
+<input type="hidden" id="dateguessed" name="dateguessed" value="<?php echo time();?>
+" />
+<!--<br /><small><?php echo smarty_modifier_date_format(time());?>
+</small></p>-->
 
                                                                 <p>
                                                                         <input class="button" type="submit" value="Submit" />

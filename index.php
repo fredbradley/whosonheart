@@ -32,7 +32,7 @@ if ($_POST) {
 		}
 
 		echo "Guess: ".$guess."<br />";
-		$xml = simplexml_load_file("http://who.fredb.me/index.php?xml&search=".$guess);
+		$xml = simplexml_load_file("http://v1-who.fredb.me/index.php?xml&search=".$guess);
 		if ($xml->error) {
 			$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". playagain(time())."!</p>";
 		} else {
@@ -41,8 +41,8 @@ if ($_POST) {
 
 	$guessoutput[] = $output;
 	}
-	var_dump($guessoutput);
-	var_dump($_POST);
+//	var_dump($guessoutput);
+//	var_dump($_POST);
 }
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
@@ -66,7 +66,7 @@ if ($_POST) {
 			$output = $xml->toXML($array, 'guesses');
 			echo ($output);*/
 		} else {
-			var_dump($array);
+//			var_dump($array);
 		}
 
 	/* SMARTY ASSIGNS */

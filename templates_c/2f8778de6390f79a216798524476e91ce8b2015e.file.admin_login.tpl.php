@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 14:05:31
-         compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:4943245774fc0d62a434937-61203104%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 10:38:20
+         compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin_login.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:21223683134fe0363e539557-71138475%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '976102f5c94297f3f171e9560d1d240ba3e9d069' => 
+    '2f8778de6390f79a216798524476e91ce8b2015e' => 
     array (
-      0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_login.tpl',
-      1 => 1340098572,
+      0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin_login.tpl',
+      1 => 1340095088,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '4943245774fc0d62a434937-61203104',
+  'nocache_hash' => '21223683134fe0363e539557-71138475',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fc0d62a49a378_26686528',
+  'unifunc' => 'content_4fe0363e74d636_18230097',
   'variables' => 
   array (
     'SITE' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fc0d62a49a378_26686528')) {function content_4fc0d62a49a378_26686528($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_4fe0363e74d636_18230097')) {function content_4fe0363e74d636_18230097($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 	<body id="login">
 		<div id="login-wrapper" class="png_bg">

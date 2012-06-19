@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 22:35:23
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 10:42:03
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11790329074fdf910b69a791-54632331%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd81046af329d6e17cf182bcd76e69a6345dc643a' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin.tpl',
-      1 => 1340051354,
+      1 => 1340095321,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf910b8b6607_87398251',
   'variables' => 
   array (
     'user' => 0,
     'stats' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf910b8b6607_87398251',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf910b8b6607_87398251')) {function content_4fdf910b8b6607_87398251($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
@@ -90,8 +90,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					
 					<div class="tab-content default-tab">
 					
-						<h4>Maecenas dignissim</h4>
-						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
+					<!--	<h4>Maecenas dignissim</h4>
+					-->	<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 </p>
 						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
 </p>

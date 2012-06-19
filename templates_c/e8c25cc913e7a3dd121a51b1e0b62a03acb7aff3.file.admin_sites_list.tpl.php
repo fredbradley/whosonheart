@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-07 18:13:55
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:43:00
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1861564494fc0e541491363-17997542%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e8c25cc913e7a3dd121a51b1e0b62a03acb7aff3' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_list.tpl',
-      1 => 1339085631,
+      1 => 1340098572,
       2 => 'file',
     ),
   ),
@@ -37,8 +37,11 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                 </div> <!-- End .content-box-header -->
 
                                 <div class="content-box-content">
-
-                                                <table>
+<span class="meta">Sort by: <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span>
+<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
+<!-- <input type="submit" class="button" value="Search" /> -->
+</form></div>   
+ <table>
 
                                                         <thead>
                                                                 <tr>
@@ -61,16 +64,18 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                                                                                 <option value="option3">Delete</option>
                                                                                         </select>
                                                                                         <a class="button" href="#">Apply to selected</a>
-                                                                                </div>
+                                                                                </div> -->
 
                                                                                 <div class="pagination">
-                                                                                        <a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
-                                                                                        <a href="#" class="number" title="1">1</a>
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']-1;?>
+" title="Previous Page">&laquo; Previous</a>
+<!--                                                                                        <a href="#" class="number" title="1">1</a>
                                                                                         <a href="#" class="number" title="2">2</a>
                                                                                         <a href="#" class="number current" title="3">3</a>
-                                                                                        <a href="#" class="number" title="4">4</a>
-                                                                                        <a href="#" title="Next Page">Next &raquo;</a><a href="#" title="Last Page">Last &raquo;</a>
-                                                                                </div> --> <!-- End .pagination -->
+                                                                                        <a href="#" class="number" title="4">4</a> -->
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']+1;?>
+" title="Next Page">Next &raquo;</a>
+                                                                                </div> <!-- End .pagination -->
                                                                                 <div class="clear"></div>
                                                                         </td>
                                                                 </tr>
@@ -83,7 +88,7 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 ?>
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="index.php?page=sites&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+                                                                        <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
 "><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['firstname']);?>
  <?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['surname']);?>
 </a></td>
@@ -94,11 +99,11 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
                                                                         <td>
-                                                                                <a href="index.php?page=sites&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="index.php?page=sites&action=delete&id=<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+                                                                                <a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
+" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 
                                                                 </tr>

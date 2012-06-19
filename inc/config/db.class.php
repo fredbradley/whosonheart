@@ -129,7 +129,7 @@ global $ROOT_PATH;
 	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed', dateguessed='$dateguessed'";
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
-	
+/* Backup not working on remote database 	
 	$table_name = DB_PREFIX."guesses";
 	$backup_file = "".$ROOT_PATH."database_backups/backup_guesses".date('YmdHis').".sql";
 	$sql = "SELECT * INTO OUTFILE '$backup_file' FROM $table_name";
@@ -140,7 +140,7 @@ global $ROOT_PATH;
 	$command = "mysqldump --opt --host=".DB_HOST." --user=".DB_USER." --password=".DB_PASSWORD." ".DB_DATABASE." > ".$ROOT_PATH."database_backups/ibackup".time().".sql";
 	system($command, $return);
 	echo "Backup data success!".$return;
-
+*/
 return $result;
 }
 function editSite($id) {

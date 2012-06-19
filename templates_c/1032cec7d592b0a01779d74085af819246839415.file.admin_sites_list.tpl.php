@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 22:50:05
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:25:23
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin_sites_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16339475034fdf947d879a94-66394319%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1032cec7d592b0a01779d74085af819246839415' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/dev_whosonheart/templates/admin_sites_list.tpl',
-      1 => 1340051354,
+      1 => 1340097915,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf947d901a83_90240493',
   'variables' => 
   array (
     'sites' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lastupdated' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf947d901a83_90240493',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf947d901a83_90240493')) {function content_4fdf947d901a83_90240493($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
 if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
@@ -64,16 +64,18 @@ if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570
                                                                                                 <option value="option3">Delete</option>
                                                                                         </select>
                                                                                         <a class="button" href="#">Apply to selected</a>
-                                                                                </div>
+                                                                                </div> -->
 
                                                                                 <div class="pagination">
-                                                                                        <a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
-                                                                                        <a href="#" class="number" title="1">1</a>
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']-1;?>
+" title="Previous Page">&laquo; Previous</a>
+<!--                                                                                        <a href="#" class="number" title="1">1</a>
                                                                                         <a href="#" class="number" title="2">2</a>
                                                                                         <a href="#" class="number current" title="3">3</a>
-                                                                                        <a href="#" class="number" title="4">4</a>
-                                                                                        <a href="#" title="Next Page">Next &raquo;</a><a href="#" title="Last Page">Last &raquo;</a>
-                                                                                </div> --> <!-- End .pagination -->
+                                                                                        <a href="#" class="number" title="4">4</a> -->
+                                                                                        <a href="/admin/index.php?page=sites&action=list&listpage=<?php echo $_GET['listpage']+1;?>
+" title="Next Page">Next &raquo;</a>
+                                                                                </div> <!-- End .pagination -->
                                                                                 <div class="clear"></div>
                                                                         </td>
                                                                 </tr>
