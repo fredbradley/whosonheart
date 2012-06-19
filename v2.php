@@ -20,10 +20,10 @@
 		foreach ($_GET as $guess) {
 			if ($guess == "") {
 				break;
-			} 
+			}
 			$iguess = $db->searchGuesses(strtolower($guess));
 			if (ucwords($guess) == "Tina Turner") {
-				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
+				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a></p>";
 				$guessoutput[] = $output;
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
