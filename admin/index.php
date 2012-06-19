@@ -53,8 +53,8 @@
 					include_once 'inc/sites.php';
 					$smarty->assign('sites', $sites);
 //					$smarty->display('admin_sites.tpl');
-					if ($_POST['returnmeto'])
-						header("Location:".$_POST['returnmeto']."?returnmeto=edited");
+			//		if ($_POST['returnmeto'])
+			//			header("Location:".$_POST['returnmeto']."?returnmeto=edited");
 				$smarty->display('admin_sites.tpl');
 					break;
 				default:

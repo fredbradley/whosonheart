@@ -130,7 +130,7 @@ global $ROOT_PATH;
 	$update = "UPDATE ".DB_PREFIX."guesses SET ".$values." WHERE id=".$id;
 	$result = mysql_query($update);
 
-/* Backup not working on remote database 	
+/* Backup not working on remote database
 	$table_name = DB_PREFIX."guesses";
 	$backup_file = "".$ROOT_PATH."database_backups/backup_guesses".date('YmdHis').".sql";
 	$sql = "SELECT * INTO OUTFILE '$backup_file' FROM $table_name";

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:41:48
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 15:24:07
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2404162024fc0d71018a289-98631774%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bc2c68fd8544014ec0a9d42c8760223d3a909961' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sites_form.tpl',
-      1 => 1340098572,
+      1 => 1340112209,
       2 => 'file',
     ),
   ),
@@ -57,8 +57,11 @@ if (!is_callable('smarty_modifier_date_format')) include '/homepages/3/d29857032
 
    <form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
-
-                                                        <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
+<?php $_tmp2=ob_get_clean();?><?php if ($_tmp2=='edit'){?>
+<input type="hidden" name="returnmeto" value="<?php echo $_SERVER['HTTP_REFERER'];?>
+" />
+      <?php }?>                                                  <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 <input type="hidden" name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
 " />
 

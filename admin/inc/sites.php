@@ -26,13 +26,8 @@ if ($_POST) {
                 } else {
                         $success = successMsg("Now, I've moved some things around and that's all good! I'll take you back to the list in 5 seconds!");
                         $smarty->assign('dbresult', $success);
-//		                        header("Location:".$_POST['returnmeto']."?returnmeto=edited");
                 }
         }
-}
-if ($_REQUEST['returnmeto']=="edited") {
-	$success = successMsg("I've edited that entry! Look you're back at the page you were at!");
-	$smarty->assign('dbresult', $success);
 }
         if ($_GET['action']=="delete") {
                 if ($_GET['id']=="") {
@@ -79,10 +74,4 @@ function successMsg($message) {
         $output .= "</div>";
 return $output;
 }
-
 ?>
-
-
-
-
-
