@@ -38,10 +38,10 @@
 		if (isset($_GET['logout'])) {
 			if ($_SESSION['user']['acl']==0) {
 				session_destroy();
-				header("Location: index.php?message=loggedout&locked&user=".$_SESSION['user']['first_name']);
+				header("Location: /admin/index.php?message=loggedout&locked&user=".$_SESSION['user']['first_name']);
 			} else {
 				session_destroy();
-				header('location: index.php?message=loggedout');
+				header('location: /admin/index.php?message=loggedout');
 			}
 		}
 	/* EASY VARIABLES */
