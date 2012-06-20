@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-20 15:42:38
-         compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_output.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:5956783894fe049a972e8e2-04419862%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-20 15:39:29
+         compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_studiooutput.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:7876678124fe1e0a1e832e2-48336027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '31c9a8a6918ef49707cd9b6f88bf64c616bcaa86' => 
+    '8a3f0df801ea0fe6310f91fd0c8c329c492f9e1f' => 
     array (
-      0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_output.tpl',
-      1 => 1340202773,
+      0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_studiooutput.tpl',
+      1 => 1340203115,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5956783894fe049a972e8e2-04419862',
+  'nocache_hash' => '7876678124fe1e0a1e832e2-48336027',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fe049a9853720_44624587',
   'variables' => 
   array (
     'guesses' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nextplay' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fe1e0a20effd0_42672895',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fe049a9853720_44624587')) {function content_4fe049a9853720_44624587($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_4fe1e0a20effd0_42672895')) {function content_4fe1e0a20effd0_42672895($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.capitalize.php';
 ?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['guesses']->value[1];?>
 <?php $_tmp1=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['guesses']->value[2];?>
 <?php $_tmp2=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['guesses']->value[0];?>
