@@ -7,18 +7,21 @@
 		<guess>
 			<searched>{$guess.guess1}</searched>
 			<output><![CDATA[{$guesses.0}]]></output>
+			<return>{$return.0}</return>
 		</guess>
 {/if}
 {if {$guesses.1}}
 		<guess>
 			<searched>{$guess.guess2}</searched>
 			<output><![CDATA[{$guesses.1}]]></output>
+			<return>{$return.1}</return>
 		</guess>
 {/if}
 {if {$guesses.2}}
 		<guess>
 			<searched>{$guess.guess3}</searched>
 			<output><![CDATA[{$guesses.2}]]></output>
+			<return>{$return.2}</return>
 		</guess>
 {/if}
 	</guesses>

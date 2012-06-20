@@ -46,6 +46,7 @@ $nextplay = $db->nextPlay();
 	/* SMARTY ASSIGNS */
 		$smarty->assign('nextplay', $nextplay);
 		$smarty->assign('guesses', $guessoutput);
+		$smarty->assign('return', $returns);
 		$smarty->assign('guess', $_GET);
 //		$smarty->assign('SITE', $site);
 //		$smarty->assign('TITLE', $site['title']);

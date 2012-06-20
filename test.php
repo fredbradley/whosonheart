@@ -19,12 +19,13 @@
 <?php
 if ($_POST) {
 $query_string = "guess1=" . urlencode($_POST['guess1']) . "&guess2=" . urlencode($_POST['guess2']) ."&guess3=".urlencode($_POST['guess3']);
-$xmlfile = "http://who.fredb.me/xml?".$query_string;
-
+$xmlfile = "http://".$_SERVER['SERVER_NAME']."/xml?".$query_string;
 	$xml = simplexml_load_file($xmlfile);
 //echo "<pre>";
 //	print_r($xml);
 //echo "</pre>";
+} else {
+	$xml = "";
 }
 ?>
 
@@ -40,6 +41,5 @@ $xmlfile = "http://who.fredb.me/xml?".$query_string;
 	echo $xml->guesses->guess[2]->output;
 ?>	<input class="button" type="submit" />
 </form>
-
 </body>
 </html>

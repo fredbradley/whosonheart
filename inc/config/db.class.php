@@ -360,8 +360,22 @@ function nextPlay() {
 return $output;
 }
 function guessMade() {
-	//Add to Database	
+/*	//Add to Database
+	$guess1 	= $_GET['guess1'];
+	$guess2 	= $_GET['guess2'];
+	$guess3 	= $_GET['guess3'];
+	$return1	= $xml->guesses->guess[0]->return;
+	$return2	= $xml->guesses->guess[1]->return;
+	$return3	= $xml->guesses->guess[2]->return;
+
+	$query = INSERT INTO ".DB_PREFIX."guessattempts ";
+        $query .= "(guess1, guess2, guess3, return1, return2, return3, remote_ip, remote_host, time) VALUES ";
+        $query .= "('".$guess1."', '".$guess2."', '".guess3."', '".$return1."', '".$return2."', '".$return3."', '".$remoteip."', '".$remotehost."', '".time()."')";
+	$result = mysql_query($query);
+	return $result;
+*/
 }
+
 /* Count Number of rows query */
 function count ($query) {
   $this->result = mysql_query($query);
