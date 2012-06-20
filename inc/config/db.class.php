@@ -309,7 +309,7 @@ function getSites($sort="surname", $order="ASC", $where, $page=0) {
 	if (isset($_GET['sort']))
 	$query = $query ." ORDER BY ".$sort." ".$order."";
 //	if ($page > 0)
-	$query = $query ." LIMIT ".$page*$perpage.", $perpage";
+//	$query = $query ." LIMIT ".$page*$perpage.", $perpage";
 	$this->result = mysql_query($query);
 	while($row = mysql_fetch_assoc($this->result)) {
 			$output[] = $row;

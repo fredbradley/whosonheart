@@ -25,6 +25,9 @@
 			if (ucwords($guess) == "Tina Turner") {
 				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a></p>";
 				$guessoutput[] = $output;
+			} elseif (strtolower($guess) == "fergie") {
+				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
+				$guessoutput[] = $output;
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
 					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
