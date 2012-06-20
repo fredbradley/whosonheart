@@ -222,6 +222,7 @@ function searchGuesses($search="", $field="cname") {
 //	echo $query.$where;
 return $array;
 }
+
 function search_Guesses($search) {
 	if ($search == "") {
 		$output['error'] = "Search field blank";

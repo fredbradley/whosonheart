@@ -14,6 +14,8 @@
 	/* LOAD CONFIG (each file) */
 		require_once 'inc/config/siteconfigs.php';
 
+//var_dump($db->searchGuesses($_GET['guess1']));
+
 	$guessoutput = array();
 	if ($_POST) {
 		foreach ($_POST as $guess) {
@@ -32,17 +34,16 @@
 					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
-					$output = "<p>".trim(ucwords($iguess[0]['guess']['name']['full_name']))."\" has been guessed ".pluralise($iguess[0]['guess']['timesguess'])."!</p>";
-				}
+					$output = "".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])."!</p>";
+				}	$times = $iguess[0]['guess']['timesguess'];
 				$guessoutput[] = $output;
+				$timesguessed[] = $times;
 			}
 		}
 	}
 
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
-	//	$query = $db->getGuesses("SELECT * FROM ".DB_PREFIX."guesses");
-	//	$array = $db->searchGuesses($_GET['search'], $_GET['field']);
 
 $nextplay = $db->nextPlay();
 	/* SMARTY ASSIGNS */
@@ -50,16 +51,13 @@ $nextplay = $db->nextPlay();
 		$smarty->assign('guesses', $guessoutput);
 		$smarty->assign('return', $returns);
 		$smarty->assign('guess', $_POST);
-//		$smarty->assign('SITE', $site);
-//		$smarty->assign('TITLE', $site['title']);
-//		$smarty->assign('error', $debug);
-//		$smarty->assign('FACEPAGE', $fanpage);
+		$smarty->assign('timesguessed', $timesguessed);
 
 	/* DISPLAY PAGE */
 	if (isset($_GET['xml'])) {
 		$smarty->display('site_xml.tpl');
 	} else {
-		$smarty->display('site_studiooutput.tpl');
+		$smarty->display('site_studio.tpl');
 	}
 
 
