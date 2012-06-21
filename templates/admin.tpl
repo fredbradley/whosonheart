@@ -59,11 +59,11 @@
 					
 					<div class="tab-content default-tab">
 					
-						<h4>Useful Stats</h4>
+						<h3>Useful Stats</h3>
 						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
-						<a href="#databasebackup" rel="modal"><h4>Backup Database</h4></a>
+						<h3><a href="#databasebackup" rel="modal">Backup Database</a></h3>
 
 					</div> <!-- End #tab3 -->        
 					
