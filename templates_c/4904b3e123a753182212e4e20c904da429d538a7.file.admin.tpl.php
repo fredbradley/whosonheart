@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-19 11:39:08
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-21 17:16:16
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14696747564fc0d624dbbec4-62854623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4904b3e123a753182212e4e20c904da429d538a7' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin.tpl',
-      1 => 1340098572,
+      1 => 1340291721,
       2 => 'file',
     ),
   ),
@@ -82,7 +82,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="content-box-header">
 					
-					<h3>Useful Stats</h3>
+					<h3>Useful Things</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -90,14 +90,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					
 					<div class="tab-content default-tab">
 					
-					<!--	<h4>Maecenas dignissim</h4>
-					-->	<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
+						<h4>Useful Stats</h4>
+						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 </p>
 						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
 </p>
 						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
 </p>
-						
+						<a href="#databasebackup" rel="modal"><h4>Backup Database</h4></a>
+
 					</div> <!-- End #tab3 -->        
 					
 				</div> <!-- End .content-box-content -->
