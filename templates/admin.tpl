@@ -41,6 +41,8 @@
 					<img src="../assets/images/build-icons/mail.png" alt="icon" /><br />
 					Mail For Help
 				</span></a></li>
+				<li><a class="shortcut-button" href="#databasebackup" rel="modal"><span>
+					<img src="../assets/images/build-icons/hat-and-magic-wand.png" alt="Backup Database" /><br />Backup DB</span></a></li>
 				
 			</ul><!-- End .shortcut-buttons-set -->
 			
