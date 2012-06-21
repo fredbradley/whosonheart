@@ -67,10 +67,12 @@ $nextplay = $db->nextPlay();
 
 
 function pluralise($int) {
-	if ($int > 1) {
+	if ($int > 2) {
 		return $int ." times";
 	} elseif ($int == 1) {
 		return "once";
+	} elseif ($int == 2) {
+		return "twice";
 	} elseif ($int < 1) {
 		return $int ." times";
 	}
