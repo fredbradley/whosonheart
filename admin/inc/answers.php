@@ -1,7 +1,7 @@
 <?php
 if ($_POST) {
 	if ($_POST['addanswer'] == 1) {
-                $add = $db->addAnswer($_POST['answer'], $_POST['listener'], $_POST['newslink'], $_POST['word']);
+                $add = $db->addAnswer($_POST['answer'], $_POST['listener'], $_POST['newslink'], $_POST['word'], $_POST['prize']);
                 if ($add != 1) {
                         $error = $db->error("Error in your code matey!");
                         $smarty->assign('dbresult', $error);

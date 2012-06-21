@@ -23,12 +23,18 @@
 <div style="display:none;" id="addanswer">
 <h3>Add An Answer</h3>
 <form action="/admin/index.php" method="post">
+<fieldset class="column-left">
 <p><label for="answer">Answer</label><input class="text-input medium-input" type="text" name="answer" /><br /><small>"Tina Turner"</small>
 </p><p><label for="listener">Listener's Name</label><input class="text-input medium-input" type="text" name="listener" /><br /><small>"Katie O'Brien"</small>
-</p><p><label for="newslink">News URL</label><input type="text" name="newslink" class="text-input medium-input" /><br /><small>http://www.heart.co.uk/some/news/page</small>
-</p><p><label for="word">Word</label><input type="text" name="word" class="text-input medium-input" /><br /><small>"Who's"</small></p>
+</p>
+</fieldset><fieldset class="column-right">
+<p><label for="word">Word</label><input type="text" name="word" class="text-input medium-input" /><br /><small>"Who's"</small>
+</p><p><label for="prize">Prize</label><input type="text" name="prize" class="text-input medium-input" /><br /><small>The ammount of money won. <br />No &quot;&pound;&quot; sign needed.</small></p>
+</fieldset>
+<fieldset class="clear">
+<p><label for="newslink">News Page URL</label><input type="text" name="newslink" class="text-input large-input" /><br /><small>http://www.heart.co.uk/some/news/page/article</small></p>
 <input type="hidden" name="addanswer" value="1" />
-<input type="submit" value="Add Answer" class="button" />
+<input type="submit" value="Add Answer" class="button" /></fieldset>
 </form></div>
 <div style="display:none;" id="deleteanswer">
 <h3>Delete An Answer</h3>

@@ -49,10 +49,10 @@ function showError($error) {
 /************************************************************************************
 ** USER FUNCTIONS
 *************************************************************************************/
-function addAnswer($answer, $listener, $newslink, $word) {
+function addAnswer($answer, $listener, $newslink, $word, $prize) {
 	$query = "INSERT INTO ".DB_PREFIX."configs ";
-	$query .= "(name, listener, time, newslink, word) VALUES ";
-	$query .= "('".$answer."', '".$listener."', '".time()."', '".$newslink."', '".$word."')";
+	$query .= "(name, listener, time, newslink, word, prize) VALUES ";
+	$query .= "('".$answer."', '".$listener."', '".time()."', '".$newslink."', '".$word."', '".$prize."')";
 	$result = mysql_query($query);
 	return $result;
 }
