@@ -25,7 +25,7 @@
  			$correctguess = $db->correctGuesses($guess);
                 
 			if ($correctguess != 0) {
-				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2]." who won &pound;</a></p>";
+				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
 				$guessoutput[] = $output;
 			} elseif (strtolower($guess) == "fergie") {
 				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
