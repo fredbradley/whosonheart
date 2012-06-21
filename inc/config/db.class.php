@@ -22,7 +22,11 @@ function query ($query) {
   $this->result = mysql_query($query) or die(mysql_error());
   return $this->result;
 }
-
+function databaseBackup() {
+$query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
+$result = mysql_query($query);
+return $result;	
+}
 function error($message) {
 	$output = "<div class=\"notification error png_bg\">";
 	$output .= "<a href=\"#\" class=\"close\">";
@@ -191,6 +195,19 @@ return $output;
 /************************************************************************************
 ** SEARCH GUESSES
 *************************************************************************************/
+function correctGuesses($search) {
+	$guess = trim(strtolower($search));
+	$query = "SELECT * FROM ".DB_PREFIX."configs WHERE name='".$guess."'";
+	$num = $this->count($query);
+	if ($num == 1) {
+		$result = mysql_query($query);
+		$output = mysql_fetch_row($result);
+	} else {
+		$output = 0;
+	}
+return $output;	
+}
+
 function searchGuesses($search="", $field="cname") {
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	if ($search)

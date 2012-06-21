@@ -17,16 +17,22 @@
 	/* LOAD VARIABLES */
 		$debugformat = array('nositefound' => "Sorry, theres not site configured for your URL");
 		$debug = $db->error($debugformat['nositefound']);
-
+$tina = $db->correctGuesses("Tina Turner");
+var_dump($tina);
 	$guessoutput = array();
 if ($_POST) {
 	foreach ($_POST as $guess) {
 		if ($guess == "") {
 			break;
 		} 
-
+		$correctguess = $db->correctGuesses($guess);
+		if ($correctguess != 0) {
+			$output = "<p>".ucwords($guess)." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2]." who won &pound."$correctguess[6]."</a></p>";
+			$guessoutput[] = $output;
+			break;
+		}
 		if (ucwords($guess) == "Tina Turner") {
-			$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
+//			$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a>";
 			$guessoutput[] = $output;
 			break;
 		}

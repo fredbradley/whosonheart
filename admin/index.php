@@ -21,6 +21,10 @@
 	if (isset($_GET['message'])) {
 		$systemMsg = systemMsg($_GET['message']);
 	}
+	if (isset($_POST) && $_POST['dbaction']=="backup") {
+		$dobackup = $db->databaseBackup();
+		$smarty->assign('message', "I created a backup of the database!");
+	}
 		$stats = $db->usefulStats();
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");

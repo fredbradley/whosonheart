@@ -22,18 +22,20 @@
 				break;
 			}
 			$iguess = $db->searchGuesses(strtolower($guess));
-			if (ucwords($guess) == "Tina Turner") {
-				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a></p>";
+ 			$correctguess = $db->correctGuesses($guess);
+                
+			if ($correctguess != 0) {
+				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2]." who won &pound;</a></p>";
 				$guessoutput[] = $output;
 			} elseif (strtolower($guess) == "fergie") {
 				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
 				$guessoutput[] = $output;
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
-					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
+					$output = "<p>It doesn't look like ".ucwords($guess)." has been guessed before. <br />We've had a lot of guesses already so if you've spelt the name correctly, you should call in when we play again ". $db->nextPlay()."!</p>";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
-					$output = "<p>I found \"".trim(ucwords($iguess[0]['guess']['name']['full_name']))."\" who has been guessed ".pluralise($iguess[0]['guess']['timesguess'])."!</p>";
+					$output = "<p>".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])." before!</p>";
 				}
 				$guessoutput[] = $output;
 			}

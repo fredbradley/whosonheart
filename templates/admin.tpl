@@ -51,7 +51,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Useful Stats</h3>
+					<h3>Useful Things</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -59,11 +59,12 @@
 					
 					<div class="tab-content default-tab">
 					
-					<!--	<h4>Maecenas dignissim</h4>
-					-->	<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
+						<h4>Useful Stats</h4>
+						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
-						
+						<a href="#databasebackup" rel="modal"><h4>Backup Database</h4></a>
+
 					</div> <!-- End #tab3 -->        
 					
 				</div> <!-- End .content-box-content -->
