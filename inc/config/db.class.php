@@ -355,6 +355,8 @@ function usefulStats() {
 }
 
 function nextPlay() {
+date_default_timezone_set('Europe/London');
+echo date('H');
 	if (date("w") > 0 && date("w") < 6) {
 	// If it's Mon, Tue, Wed, Thu or Fri
 		if (date("Hi") > 0900 && date("Hi") < 1550) {

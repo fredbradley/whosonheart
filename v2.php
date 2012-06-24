@@ -32,7 +32,7 @@
 				$guessoutput[] = $output;
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
-					$output = "<p>It doesn't look like ".ucwords($guess)." has been guessed before. <br />We've had a lot of guesses already so if you've spelt the name correctly, you should call in when we play again ". $db->nextPlay()."!</p>";
+					$output = "<p>It looks like ".ucwords($guess)." hasn't been guessed yet, so you should call in when we play again ". $db->nextPlay().". Make sure you've spelt it right though!</p>";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
 					$output = "<p>".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])." before!</p>";
