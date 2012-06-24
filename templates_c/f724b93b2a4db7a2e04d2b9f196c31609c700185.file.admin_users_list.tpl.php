@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-05-26 15:14:38
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-22 12:37:23
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_users_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18044705024fc0d73eab8c21-44613613%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f724b93b2a4db7a2e04d2b9f196c31609c700185' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_users_list.tpl',
-      1 => 1338037245,
+      1 => 1340098572,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fc0d73eb21df1_47819880',
   'variables' => 
   array (
     'users' => 0,
     'user' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fc0d73eb21df1_47819880',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fc0d73eb21df1_47819880')) {function content_4fc0d73eb21df1_47819880($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_relative_date')) include '/homepages/3/d298570323/htdocs/_smarty_sites/libs/plugins/modifier.relative_date.php';
 ?> <div class="content-box-header">
@@ -82,7 +82,7 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
 ?>
                                                                 <tr>
                                                                         <td><input type="checkbox" /></td>
-                                                                        <td><a href="index.php?page=users&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+                                                                        <td><a href="edit/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['user']->value['last_name'];?>
 </a></td>
@@ -93,10 +93,10 @@ $_smarty_tpl->tpl_vars['user']->_loop = true;
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['user']->value['last_login']);?>
 </td>
                                                                         <td>
-                                                                                <a href="index.php?page=users&action=edit&id=<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
-" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="index.php?page=users&action=delete&id=<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
-" title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a>
+                                                                                <a href="edit/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
+                                                                                <a href="delete/<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
                                                                         <!--    <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
                                                                 -->     </td>
 

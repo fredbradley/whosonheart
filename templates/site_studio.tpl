@@ -1,7 +1,7 @@
 <html>
 <head>
 <style>
-input[type="text"] {
+input[type="text"], form span {
 	width:400px;
 	font-size:30px;
 	font-weight:bold;
@@ -33,9 +33,9 @@ div#output {
 </head>
 <body>
 <div id="container">
-<div id="header">
+<!--<div id="header">
 <img src="http://assets.gcstatic.com/u/apps/asset_manager/uploaded/2012/24/whos-on-heart-june-2-1339358753.jpeg"/>
-</div>
+</div>-->
 <div id="output">
 	{$guessoutput.0}
 	<form name="search" method="post" action="studio.php">

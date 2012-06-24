@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-20 16:12:26
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-24 19:37:46
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_studio.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13447377134fe1e78ddfaf20-71715069%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0af1dbf37f9bc572f370bca0cc853c00741ff0f0' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/site_studio.tpl',
-      1 => 1340205144,
+      1 => 1340563062,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_4fe1e78de7a5c5_18695620')) {function content_4fe1e78de7a5c5_18695620($_smarty_tpl) {?><html>
 <head>
 <style>
-input[type="text"] {
+input[type="text"], form span {
 	width:400px;
 	font-size:30px;
 	font-weight:bold;
@@ -60,9 +60,9 @@ div#output {
 </head>
 <body>
 <div id="container">
-<div id="header">
+<!--<div id="header">
 <img src="http://assets.gcstatic.com/u/apps/asset_manager/uploaded/2012/24/whos-on-heart-june-2-1339358753.jpeg"/>
-</div>
+</div>-->
 <div id="output">
 	<?php echo $_smarty_tpl->tpl_vars['guessoutput']->value[0];?>
 

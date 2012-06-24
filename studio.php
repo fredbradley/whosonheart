@@ -26,16 +26,21 @@
 			if (ucwords($guess) == "Tina Turner") {
 				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a></p>";
 				$guessoutput[] = $output;
+				$times = "<span class=\"correct\">Correct</span>";
+				$timesguessed[] = $times;
 			} elseif (strtolower($guess) == "fergie") {
 				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
 				$guessoutput[] = $output;
+
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
 					$output = "<p>It doesn't look like \"".ucwords($guess)."\" has been guess yet, have you spelt the name correctly? If so you should call when we play again ". $db->nextPlay()."!</p>";
+					$times = "<span class=\"new\">NEW</span>";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
 					$output = "".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])."!</p>";
-				}	$times = $iguess[0]['guess']['timesguess'];
+					$times = $iguess[0]['guess']['timesguess'];
+				}
 				$guessoutput[] = $output;
 				$timesguessed[] = $times;
 			}

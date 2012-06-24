@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-05-26 15:15:36
+<?php /* Smarty version Smarty-3.1.8, created on 2012-06-24 20:29:56
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_users_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13443463054fc0d77844f204-05253095%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a340a010d7defc6f28631de6679bc7e6c179b695' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_users_form.tpl',
-      1 => 1338037245,
+      1 => 1340098572,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fc0d778537084_34069606',
   'variables' => 
   array (
     'action' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'type' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fc0d778537084_34069606',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fc0d778537084_34069606')) {function content_4fc0d778537084_34069606($_smarty_tpl) {?> <div class="content-box-header">
 
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp3=ob_get_clean();?><?php if ($_tmp3=='delete'){?>
-<form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+<form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 <fieldset class="column-left">
 <p>Are you 100% sure you want to delete <span class="highlight"><?php echo $_smarty_tpl->tpl_vars['edit']->value['first_name'];?>
@@ -52,14 +52,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <p>If you do change your mind, later on, you can always add a user like normal!</p>
 </fieldset>
 <fieldset class="column-right">
-<fieldset class="column-left"><a href="index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
+<fieldset class="column-left"><a href="/admin/index.php?message=Cancelled"><button class="button-cancel">Cancel</button></a>
 <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['edit']->value['id'];?>
 " />
 </fieldset><fieldset class="column-right"><input type="submit" class="button-confirm" name="confirm-delete" value="Confirm" />
 </fieldset></fieldset>
 <div style="clear:both;"></div></form>
 <?php }else{ ?>
-   <form action="index.php?<?php echo $_SERVER['QUERY_STRING'];?>
+   <form action="/admin/index.php?<?php echo $_SERVER['QUERY_STRING'];?>
 " method="post">
 
                                                         <fieldset class="column-left"> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
