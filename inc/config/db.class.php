@@ -356,7 +356,6 @@ function usefulStats() {
 
 function nextPlay() {
 date_default_timezone_set('Europe/London');
-echo date('H');
 	if (date("w") > 0 && date("w") < 6) {
 	// If it's Mon, Tue, Wed, Thu or Fri
 		if (date("Hi") > 0900 && date("Hi") < 1550) {
@@ -379,7 +378,18 @@ echo date('H');
 	}
 return $output;
 }
-function guessMade() {
+function guessMade($input, $return, $hash) {
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+	$time = time();
+	$query = "INSERT INTO ".DB_PREFIX."guessattempts ";
+	$query .= "(`hash`, `guess`, `return`, `ip`, `host`, `time`) VALUES ";
+	$query .= "('".$hash."', '".$input."', '".$return."', '".$ip."', '".$host."', ".$time.")";
+	$result = mysql_query($query);
+	if (!$result)
+		die(mysql_error());
+	return '';
+
 /*	//Add to Database
 	$guess1 	= $_GET['guess1'];
 	$guess2 	= $_GET['guess2'];

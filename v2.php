@@ -16,7 +16,9 @@
 
 	$guessoutput = array();
 	if ($_GET) {
-		$addAnalytics = $db->guessMade();
+		// Create Hash for Stats
+		$hash = (rand (2,9999999999))/2;
+		$hash = dechex($hash).rand(1000,9999);
 		foreach ($_GET as $guess) {
 			if ($guess == "") {
 				break;
@@ -26,19 +28,25 @@
                 
 			if ($correctguess != 0) {
 				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
+				$return = ucwords($correctguess[1]);
 				$guessoutput[] = $output;
 			} elseif (strtolower($guess) == "fergie") {
 				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
 				$guessoutput[] = $output;
+				$return = "The Fergie Problem";
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
 					$output = "<p>It looks like ".ucwords($guess)." hasn't been guessed yet, so you should call in when we play again ". $db->nextPlay().". Make sure you've spelt it right though!</p>";
+					$return = "Not Guessed Yet";
 				} else {
 					// PUT IN GOOGLE API CODE HERE
 					$output = "<p>".trim(ucwords($iguess[0]['guess']['name']['full_name']))." has been guessed ".pluralise($iguess[0]['guess']['timesguess'])." before!</p>";
+					$return = trim(ucwords($iguess[0]['guess']['name']['full_name']));
 				}
 				$guessoutput[] = $output;
 			}
+			//The search unique hash gets saved in the db class file
+			$saveSearch = $db->guessMade($guess, $return, $hash);
 		}
 	}
 
