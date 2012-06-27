@@ -40,7 +40,7 @@ if ($_POST) {
 ?>
 
 <form name="whosonheart" class="custom_form" id="whosonheart" action="<?php echo $thispage; ?>" method="post">
-	<input class="text input" name="guess1" value="<?php echo $xml->guesses->guess[0]->searched; ?>" /><br />
+	<input class="text input" name="guess1" value="<?php echo stripslashes($xml->guesses->guess[0]->searched); ?>" /><br />
 <?php if ($_POST['guess1'])
 	echo $xml->guesses->guess[0]->output;
 ?>	<input class="text input" name="guess2" value="<?php echo $xml->guesses->guess[1]->searched; ?>" /><br />
