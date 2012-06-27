@@ -23,11 +23,19 @@
 				break;
 			}
 			$iguess = $db->searchGuesses(strtolower($guess));
-			if (ucwords($guess) == "Tina Turner") {
+                        $correctguess = $db->correctGuesses($guess);
+			if ($correctguess != 0) {
+				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
+                                $return = ucwords($correctguess[1]);
+                                $guessoutput[] = $output;
+				$times = "<spann class=\"Correct\">Correct</span>";
+				$timesguessed[] = $times;
+
+	/*		if (ucwords($guess) == "Tina Turner") {
 				$output = "<p>Tina Turner is the person saying \"Who's\" and was guessed by <a href=\"http://www.heart.co.uk/win/whos-on-heart/\" target=\"_blank\">Katie who won &pound;5000</a></p>";
 				$guessoutput[] = $output;
 				$times = "<span class=\"correct\">Correct</span>";
-				$timesguessed[] = $times;
+				$timesguessed[] = $times; */
 			} elseif (strtolower($guess) == "fergie") {
 				$output = "<p>Both Fergie from the Black Eyed Peas and Sir Alex Ferguson have already been guessed. If you meant another \"Fergie\" please type their full name. </p>";
 				$guessoutput[] = $output;
