@@ -2,7 +2,7 @@
 
 /* VARIABLES
 ==============*/
-$server 	= "who.fredb.me";
+$server 	= "whosonheart.fb";
 $thispage 	= "test.php";
 
 ?>
@@ -27,6 +27,7 @@ $thispage 	= "test.php";
 <?php
 if ($_POST) {
 	$query_string = "guess1=" . urlencode($_POST['guess1']) . "&guess2=" . urlencode($_POST['guess2']) ."&guess3=".urlencode($_POST['guess3']);
+echo $query_string;
 	$xmlfile = "http://".$server."/xml?".$query_string;
 	$xml = simplexml_load_file($xmlfile);
 	if (isset($_GET['debug'])) {
