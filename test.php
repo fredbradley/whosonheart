@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 /* VARIABLES
 ==============*/
-$server 	= "whosonheart.fb";
+$server 	= "who.fredb.me";
 $thispage 	= "test.php";
 
 ?>
@@ -26,8 +26,8 @@ $thispage 	= "test.php";
 <body class="london">
 <?php
 if ($_POST) {
-	$query_string = "guess1=" . urlencode($_POST['guess1']) . "&guess2=" . urlencode($_POST['guess2']) ."&guess3=".urlencode($_POST['guess3']);
-echo $query_string;
+	$query_string = "guess1=" . stripslashes($_POST['guess1']) . "&guess2=" . stripslashes($_POST['guess2']) ."&guess3=".stripslashes($_POST['guess3']);
+	echo $query_string;
 	$xmlfile = "http://".$server."/xml?".$query_string;
 	$xml = simplexml_load_file($xmlfile);
 	if (isset($_GET['debug'])) {
@@ -43,15 +43,14 @@ echo $query_string;
 <form name="whosonheart" class="custom_form" id="whosonheart" action="<?php echo $thispage; ?>" method="post">
 	<input class="text input" name="guess1" value="<?php echo stripslashes($xml->guesses->guess[0]->searched); ?>" /><br />
 <?php if ($_POST['guess1'])
-	echo $xml->guesses->guess[0]->output;
-?>	<input class="text input" name="guess2" value="<?php echo $xml->guesses->guess[1]->searched; ?>" /><br />
+	echo stripslashes($xml->guesses->guess[0]->output);
+?>	<input class="text input" name="guess2" value="<?php echo stripslashes($xml->guesses->guess[1]->searched); ?>" /><br />
 <?php if ($_POST['guess2'])
-	echo $xml->guesses->guess[1]->output;
-?>	<input class="text input" name="guess3" value="<?php echo $xml->guesses->guess[2]->searched; ?>" /><br />
+	echo stripslashes($xml->guesses->guess[1]->output);
+?>	<input class="text input" name="guess3" value="<?php echo stripslashes($xml->guesses->guess[2]->searched); ?>" /><br />
 <?php if ($_POST['guess3'])
-	echo $xml->guesses->guess[2]->output;
+	echo stripslashes($xml->guesses->guess[2]->output);
 ?>	<input class="button" type="submit" />
 </form>
 </body>
 </html>
-

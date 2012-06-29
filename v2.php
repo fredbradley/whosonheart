@@ -25,7 +25,7 @@
 			}
 			$iguess = $db->searchGuesses(strtolower($guess));
  			$correctguess = $db->correctGuesses($guess);
-                
+
 			if ($correctguess != 0) {
 				$output = "<p>".ucwords($correctguess[1])." is the person saying \"".$correctguess[5]."\" and was guessed by <a href=\"".$correctguess[4]."\" target=\"_blank\">".$correctguess[2].", who won &pound;".$correctguess[6]."</a></p>";
 				$return = ucwords($correctguess[1]);
@@ -52,8 +52,6 @@
 
 	/* LOAD FUNCTIONS */
 		require_once($SITE_PATH."inc/functions/common.php");
-	//	$query = $db->getGuesses("SELECT * FROM ".DB_PREFIX."guesses");
-	//	$array = $db->searchGuesses($_GET['search'], $_GET['field']);
 
 $nextplay = $db->nextPlay();
 	/* SMARTY ASSIGNS */

@@ -25,7 +25,7 @@ function query ($query) {
 function databaseBackup() {
 $query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
 $result = mysql_query($query);
-return $result;	
+return $result;
 }
 function error($message) {
 	$output = "<div class=\"notification error png_bg\">";
@@ -110,7 +110,7 @@ function addGuess() {
 	$firstname = strtolower($_POST['firstname']);
 	$surname = htmlspecialchars(strtolower($_POST['surname']), ENT_QUOTES);
 	$cname = $firstname." ".$surname;
-	$nicknames = strtolower($_POST['nicknames']);
+	$nicknames = htmlspecialchars(strtolower($_POST['nicknames']), ENT_QUOTES);
 	$timesguessed = $_POST['timesguessed'];
 	$dateguessed = $_POST['dateguessed'];
 
@@ -127,7 +127,7 @@ global $ROOT_PATH;
 	$firstname = strtolower($_POST['firstname']);
 	$surname = htmlspecialchars(strtolower($_POST['surname']), ENT_QUOTES);
 	$cname = $firstname." ".$surname;
-	$nicknames = strtolower($_POST['nicknames']);
+	$nicknames = htmlspecialchars(strtolower($_POST['nicknames']), ENT_QUOTES);
 	$timesguessed = $_POST['timesguessed'];
 	$dateguessed = $date.",".$_POST['dateguessed'];
 	$values = "firstname='$firstname', surname='$surname', cname='$cname', nicknames='$nicknames', timesguessed='$timesguessed', dateguessed='$dateguessed'";
@@ -303,7 +303,7 @@ function getGuesses($query, $named=1) {
 //		$output[] = $loop;
 		if ($named)
 		$output[$row['cname']] = $loop;
-		else 
+		else
 		$output[]['guess'] = $loop;
 	}
 	if (!$output)
