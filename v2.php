@@ -36,7 +36,7 @@
 				$return = "The Fergie Problem";
 			} else {
 				if ($iguess['guess']['error'] OR $iguess['error']) {
-					$output = "<p>It looks like ".ucwords($guess)." hasn't been guessed yet, so you should call in when we play again ". $db->nextPlay().". Make sure you've spelt it right though!</p>";
+					$output = "<p>It looks like ".stripslashes(ucwords($guess))." hasn't been guessed yet, so you should call in when we play again ". $db->nextPlay().". Make sure you've spelt it right though!</p>";
 					$return = "Not Guessed Yet";
 				} else {
 					// PUT IN GOOGLE API CODE HERE

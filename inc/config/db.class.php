@@ -108,7 +108,7 @@ return $output;
 *************************************************************************************/
 function addGuess() {
 	$firstname = strtolower($_POST['firstname']);
-	$surname = strtolower($_POST['surname']);
+	$surname = htmlspecialchars(strtolower($_POST['surname']), ENT_QUOTES);
 	$cname = $firstname." ".$surname;
 	$nicknames = strtolower($_POST['nicknames']);
 	$timesguessed = $_POST['timesguessed'];
@@ -125,7 +125,7 @@ global $ROOT_PATH;
 	$getdate = mysql_query($getdates);
 	$date = mysql_result($getdate,0);
 	$firstname = strtolower($_POST['firstname']);
-	$surname = strtolower($_POST['surname']);
+	$surname = htmlspecialchars(strtolower($_POST['surname']), ENT_QUOTES);
 	$cname = $firstname." ".$surname;
 	$nicknames = strtolower($_POST['nicknames']);
 	$timesguessed = $_POST['timesguessed'];
@@ -209,6 +209,7 @@ return $output;
 }
 
 function searchGuesses($search="", $field="cname") {
+	$search = htmlspecialchars($search, ENT_QUOTES);
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	if ($search)
 		$where = " WHERE cname = '".$search."'";
@@ -379,6 +380,8 @@ date_default_timezone_set('Europe/London');
 return $output;
 }
 function guessMade($input, $return, $hash) {
+	$input = mysql_real_escape_string($input);
+	$return = mysql_real_escape_string($resturn);
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 	$time = time();
@@ -389,21 +392,6 @@ function guessMade($input, $return, $hash) {
 	if (!$result)
 		die(mysql_error());
 	return '';
-
-/*	//Add to Database
-	$guess1 	= $_GET['guess1'];
-	$guess2 	= $_GET['guess2'];
-	$guess3 	= $_GET['guess3'];
-	$return1	= $xml->guesses->guess[0]->return;
-	$return2	= $xml->guesses->guess[1]->return;
-	$return3	= $xml->guesses->guess[2]->return;
-
-	$query = INSERT INTO ".DB_PREFIX."guessattempts ";
-        $query .= "(guess1, guess2, guess3, return1, return2, return3, remote_ip, remote_host, time) VALUES ";
-        $query .= "('".$guess1."', '".$guess2."', '".guess3."', '".$return1."', '".$return2."', '".$return3."', '".$remoteip."', '".$remotehost."', '".time()."')";
-	$result = mysql_query($query);
-	return $result;
-*/
 }
 
 /* Count Number of rows query */
