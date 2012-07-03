@@ -60,6 +60,11 @@
 			//			header("Location:".$_POST['returnmeto']."?returnmeto=edited");
 				$smarty->display('admin_sites.tpl');
 					break;
+				case "guessattempts":
+					include_once 'inc/guessattempts.php';
+					$smarty->assign('atts', $guessatts);
+					$smarty->display('admin_guessattempts.tpl');
+					break;
 				default:
 					include_once 'inc/answers.php';
 					$answers = $db->getConfig();

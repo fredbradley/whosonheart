@@ -1,0 +1,4 @@
+<?php
+	$guessatts = $db->getGuessAttempts();
+
+?>

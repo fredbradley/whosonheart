@@ -319,6 +319,16 @@ function getUsers() {
 	}
 	return $output;
 }
+function getGuessAttempts($l=0) {
+	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
+	$query = $query."LIMIT ".$l.", 10";
+	$this->result = mysql_query($query);
+	while($row=mysql_fetch_assoc($this->result)) {
+		$output[] = $row;
+	}
+return $output;
+}
+
 function getSites($sort="surname", $order="ASC", $where, $page=0) {
 	$perpage = 20;
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
@@ -350,8 +360,8 @@ function usefulStats() {
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
 	$output['guessattempts'] = $this->count($query);
-	$query = "SELECT DISTINCT hash FROM ".DB_PREFIX."guessattempts";
-	$output['guesssubmits'] = $this->count($query);
+//	$query = "SELECT DISTINCT hash FROM ".DB_PREFIX."guessattempts";
+//	$output['guesssubmits'] = $this->count($query);
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
 	$output['nextplay'] = $this->nextPlay();
