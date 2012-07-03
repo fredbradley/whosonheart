@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-03 18:36:06
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-03 18:42:42
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5489430344fdf363a0920c1-96696391%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb495a5e0e578b9c2e1e3d8fb2aebaa72553cff2' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl',
-      1 => 1341336963,
+      1 => 1341337357,
       2 => 'file',
     ),
   ),
@@ -96,6 +96,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 </p>
 						<p><strong>User Guess Attempts:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
+</p>
+						<p><strong>Unique User Submits:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guesssubmits'];?>
 </p>
 						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
 </p>

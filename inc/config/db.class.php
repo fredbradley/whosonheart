@@ -350,6 +350,8 @@ function usefulStats() {
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
 	$output['guessattempts'] = $this->count($query);
+	$query = "SELECT DISTINCT hash FROM ".DB_PREFIX."guessattempts";
+	$output['guesssubmits'] = $this->count($query);
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
 	$output['nextplay'] = $this->nextPlay();
