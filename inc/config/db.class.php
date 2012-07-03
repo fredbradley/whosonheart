@@ -348,6 +348,8 @@ function getMenu($parent) {
 function usefulStats() {
 	$query = "SELECT * FROM ".DB_PREFIX."guesses";
 	$output['numguesses'] = $this->count($query);
+	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
+	$output['guessattempts'] = $this->count($query);
 	$list = $this->getrows("SELECT * FROM ".DB_PREFIX."guesses ORDER BY timesguessed DESC LIMIT 1");
 	$output['mostguessed'] = ucwords($list[0]['cname']);
 	$output['nextplay'] = $this->nextPlay();
@@ -379,6 +381,7 @@ date_default_timezone_set('Europe/London');
 	}
 return $output;
 }
+
 function guessMade($input, $return, $hash) {
 	$input = mysql_real_escape_string($input);
 	$return = mysql_real_escape_string($resturn);
