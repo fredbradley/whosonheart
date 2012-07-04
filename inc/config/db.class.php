@@ -326,8 +326,8 @@ function getGuessAttempts($pagenum) {
 		$pagenum = 1;
 	}
 
-	$rows = $this->count($query);
-	
+//	$rows = $this->count($query);
+$rows = 10923;	
 	$page_rows = 10;
 
 	$last = ceil($rows/$page_rows);
