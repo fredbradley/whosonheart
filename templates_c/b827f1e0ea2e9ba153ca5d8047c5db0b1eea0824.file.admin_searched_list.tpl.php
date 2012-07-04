@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 11:25:51
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 20:49:05
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_searched_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:558344634ff34806234ac4-37729413%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b827f1e0ea2e9ba153ca5d8047c5db0b1eea0824' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_searched_list.tpl',
-      1 => 1341397544,
+      1 => 1341398426,
       2 => 'file',
     ),
   ),
@@ -89,9 +89,8 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
                                                                 <tr>
                                                                         <td><?php echo $_smarty_tpl->tpl_vars['site']->value['hash'];?>
 </td>
-                                                                        <td><a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['guess']);?>
-</a></td>
+                                                                        <td><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['site']->value['guess']);?>
+</td>
                                                                         <td><?php echo $_smarty_tpl->tpl_vars['site']->value['return'];?>
 </td>
 									<?php ob_start();?><?php echo substr($_smarty_tpl->tpl_vars['site']->value['time'],-10);?>
