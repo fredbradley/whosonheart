@@ -415,7 +415,7 @@ return $output;
 
 function guessMade($input, $return, $hash) {
 	$input = mysql_real_escape_string($input);
-	$return = mysql_real_escape_string($resturn);
+	$return = mysql_real_escape_string($return);
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 	$time = time();
