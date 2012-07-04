@@ -28,6 +28,14 @@
 						<li><a href="/admin/guesses/list">List Guesses</a></li>
 					</ul>
 				</li>
+				<li>
+					<a href="#" class="nav-top-item {if {$page}=="guessattempts"}current{/if}">
+						Guess Attempts
+					</a>
+					<ul>
+						<li><a href="/admin/searched/list">View Search Attempts</a></li>
+					</ul>
+				</li>
 				{if {$user.acl} gt 2}
 				<li>
 					<a href="#" class="nav-top-item {if {$page}=="users"}current{/if}">
