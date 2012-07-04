@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 10:49:36
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 11:25:51
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_searched_list.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:558344634ff34806234ac4-37729413%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b827f1e0ea2e9ba153ca5d8047c5db0b1eea0824' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_searched_list.tpl',
-      1 => 1341394932,
+      1 => 1341397544,
       2 => 'file',
     ),
   ),
@@ -39,7 +39,7 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
 
                                 <div class="content-box-content">
 <!-- <span class="meta">Sort by: <a href="/admin/guesses/list/firstname/asc">First Name</a> | <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span> -->
-<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
+<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=guessattempts" name="searchbox"><input class="searchfield text-input large-input" value="Search..." type="text" name="searchfield" />
 <!-- <input type="submit" class="button" value="Search" /> -->
 </form></div>   
  <table>
@@ -50,7 +50,6 @@ if (!is_callable('smarty_modifier_relative_date')) include '/Users/fredbradley/S
                                                                    <th>Guess</th>
                                                                    <th>Return</th>
                                                                    <th>Last Updated</th>
-                                                                   <th>Edit</th>
                                                                 </tr>
 
                                                         </thead>
@@ -99,14 +98,6 @@ $_smarty_tpl->tpl_vars['site']->_loop = true;
 <?php $_tmp3=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["lastupdated"] = new Smarty_variable($_tmp3, null, 0);?>
                                                                         <td><?php echo smarty_modifier_relative_date($_smarty_tpl->tpl_vars['lastupdated']->value);?>
 </td>
-                                                                        <td>
-                                                                                <a href="/admin/guesses/edit/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="/admin/guesses/delete/<?php echo $_smarty_tpl->tpl_vars['site']->value['id'];?>
-" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td>
-
                                                                 </tr>
                                                 <?php } ?>
                                                         </tbody>

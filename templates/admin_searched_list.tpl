@@ -9,7 +9,7 @@
 
                                 <div class="content-box-content">
 <!-- <span class="meta">Sort by: <a href="/admin/guesses/list/firstname/asc">First Name</a> | <a href="/admin/guesses/list/surname/asc">Surname</a> | <a href="/admin/guesses/list/timesguessed/desc">Most Guessed</a> | <a href="/admin/guesses/list/cname/asc">Non Meta</a></span> -->
-<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=sites" name="searchbox"><input class="searchfield text-input large-input" value="Type the FULL name of the Celebrity" type="text" name="searchfield" />
+<div class="align-right searchbox" style="width:500px;"><form method="post" action="/admin/index.php?page=guessattempts" name="searchbox"><input class="searchfield text-input large-input" value="Search..." type="text" name="searchfield" />
 <!-- <input type="submit" class="button" value="Search" /> -->
 </form></div>   
  <table>
@@ -20,7 +20,6 @@
                                                                    <th>Guess</th>
                                                                    <th>Return</th>
                                                                    <th>Last Updated</th>
-                                                                   <th>Edit</th>
                                                                 </tr>
 
                                                         </thead>
@@ -57,12 +56,6 @@
                                                                         <td>{$site.return}</td>
 									{assign var="lastupdated" value="{$site.time|substr:-10}"}
                                                                         <td>{$lastupdated|relative_date}</td>
-                                                                        <td>
-                                                                                <a href="/admin/guesses/edit/{$site.id}" title="Edit"><img src="/admin/resources/images/icons/pencil.png" alt="Edit" /></a>
-                                                                                <a href="/admin/guesses/delete/{$site.id}" title="Delete"><img src="/admin/resources/images/icons/cross.png" alt="Delete" /></a>
-                                                                        <!--    <a href="#" title="Edit Meta"><img src="/admin/resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
-                                                                -->     </td>
-
                                                                 </tr>
                                                 {/foreach}
                                                         </tbody>

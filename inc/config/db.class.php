@@ -347,6 +347,15 @@ $rows = 10923;
 	}
 return $output;
 }
+function searchAttempts($search) {
+	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
+	$where = "WHERE `guess` LIKE '%".$search."%'";
+	$this->result = mysql_query($query.$where);
+	while($row=mysql_fetch_assoc($this->result)) {
+		$output[] = $row;
+	}
+return $output;
+}
 
 function getSites($sort="surname", $order="ASC", $where, $page=0) {
 	$perpage = 20;
