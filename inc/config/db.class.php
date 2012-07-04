@@ -319,9 +319,28 @@ function getUsers() {
 	}
 	return $output;
 }
-function getGuessAttempts($l=0) {
+function getGuessAttempts($pagenum) {
 	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
-	$query = $query."LIMIT ".$l.", 10";
+
+	if (!(isset($pagenum))) {
+		$pagenum = 1;
+	}
+
+	$rows = $this->count($query);
+	
+	$page_rows = 10;
+
+	$last = ceil($rows/$page_rows);
+
+	if ($pagenum < 1) {
+		$pagenum = 1;
+	} elseif ($pagenum > $last) {
+		$pagenum = $last;
+	}
+
+	$max = "LIMIT ".($pagenum - 1) * $page_rows.", ".$page_rows;
+	$query = $query.$max;
+//	$query = $query."LIMIT ".$l * 2.", 10";
 	$this->result = mysql_query($query);
 	while($row=mysql_fetch_assoc($this->result)) {
 		$output[] = $row;

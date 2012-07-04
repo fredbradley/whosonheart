@@ -8,4 +8,4 @@ RewriteRule ^users/([a-z0-9]+)(/)?$ index.php?page=users&action=$1 [L]
 RewriteRule ^users/([a-z0-9]+)/([0-9]+)(/)?$ index.php?page=users&action=$1&id=$2 [L]
 
 RewriteRule ^searched/([a-z0-9]+)(/)?$ index.php?page=guessattempts&action=$1 [L]
-#RewriteRule ^searched/([a-z0-9]+)/
+RewriteRule ^searched/([a-z0-9]+)/([a-z0-9]+)(/)?$ index.php?page=guessattempts&action=$1&listpage=$2 [L]
