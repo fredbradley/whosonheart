@@ -345,6 +345,7 @@ function getGuessAttempts($pagenum) {
 	while($row=mysql_fetch_assoc($this->result)) {
 		$output[] = $row;
 	}
+	mysql_free_result($this->result);
 return $output;
 }
 
