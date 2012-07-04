@@ -321,14 +321,14 @@ function getUsers() {
 }
 function getGuessAttempts($pagenum) {
 	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
-
+	$where = "WHERE `time` > ".(time() - 86400);
 	if (!(isset($pagenum))) {
 		$pagenum = 1;
 	}
 
-//	$rows = $this->count($query);
+	$rows = $this->count($query.$where);
 echo $this->stats['guessattempts'];
-	$rows = 10;
+//	$rows = 10;
 	$page_rows = 10;
 
 	$last = ceil($rows/$page_rows);
