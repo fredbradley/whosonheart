@@ -320,6 +320,7 @@ function getUsers() {
 	return $output;
 }
 function getGuessAttempts($pagenum) {
+	mysql_free_result($this->result);
 	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
 
 	if (!(isset($pagenum))) {
@@ -431,8 +432,10 @@ function guessMade($input, $return, $hash) {
 
 /* Count Number of rows query */
 function count ($query) {
+mysql_free_result($this->result)
   $this->result = mysql_query($query);
   $this->count = mysql_num_rows($this->result);
+	mysql_free_result($this->result);
   return $this->count;
 }
 
