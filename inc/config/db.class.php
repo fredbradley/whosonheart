@@ -339,7 +339,7 @@ $rows = 10923;
 	}
 
 	$max = "LIMIT ".($pagenum - 1) * $page_rows.", ".$page_rows;
-	$query = $query.$max;
+	$query = $query."ORDER BY `time` DESC ".$max;
 //	$query = $query."LIMIT ".$l * 2.", 10";
 	$this->result = mysql_query($query);
 	while($row=mysql_fetch_assoc($this->result)) {
