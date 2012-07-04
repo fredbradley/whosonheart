@@ -64,6 +64,7 @@
 						<h3>Useful Stats</h3>
 						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>User Guess Attempts:</strong> {$stats.guessattempts}</p>
+						<p><strong>Guess Attempts in the last hour:</strong> {$stats.guessesinhour}</p>
 						<p><strong>Unique User Submits:</strong> {$stats.guesssubmits|default:"Database Currently Too Big To Compute"}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
