@@ -390,7 +390,8 @@ function usefulStats() {
 	$output['numguesses'] = $this->count($query);
 	$query = "SELECT guess FROM ".DB_PREFIX."guessattempts";
 	$output['guessattempts'] = $this->count($query);
-	$where = " WHERE time > strtotime('-1 hour', time())";
+	$now = time();
+	$where = " WHERE time > (strtotime('-1 hour', $now))";
 	$output['guessesinhour'] = $this->count($query.$where);
 //	$query = "SELECT DISTINCT hash FROM ".DB_PREFIX."guessattempts";
 //	$output['guesssubmits'] = $this->count($query);
