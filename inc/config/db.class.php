@@ -340,7 +340,7 @@ $rows = 10923;
 
 	$max = "LIMIT ".($pagenum - 1) * $page_rows.", ".$page_rows;
 	$sort = " ORDER BY `time` DESC ".$max;
-	$where = " WHERE `time` < (time() + 86400)";
+	$where = " WHERE `time` < ".(time() + 86400);
 	$this->result = mysql_query($query.$where.$sort);
 	while($row=mysql_fetch_assoc($this->result)) {
 		$output[] = $row;
