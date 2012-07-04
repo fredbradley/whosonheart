@@ -40,9 +40,9 @@
                                                                                 <div class="pagination">
 	{if {$smarty.get.listpage > 1}}
                                                                                         <a href="/admin/searched/list/{$smarty.get.listpage - 1}" title="Previous Page">&laquo; Previous</a>{/if}
-{$foo=1}{while $foo < {{$stats.guessattempts/10}+1}}
+{*{$foo=1}{while $foo < {{$stats.guessattempts/10}+1}}
 											<a href="/admin/searched/list/{$foo}" class="number{if {$foo}=={$smarty.get.listpage}} current{/if}" title="{$foo}">{$foo}</a>
-<!-- {$foo++} -->{/while}
+<!-- {$foo++} -->{/while}*}
          {if $smarty.get.listpage < {$stats.guessattempts/10}}                                                                               <a href="/admin/searched/list/{$smarty.get.listpage + 1}" title="Next Page">Next &raquo;</a>
                                                               {/if}                  </div> <!-- End .pagination -->
                                                                                 <div class="clear"></div>
