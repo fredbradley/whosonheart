@@ -52,7 +52,7 @@
                                                 {foreach $atts as $site}
                                                                 <tr>
                                                                         <td>{$site.hash}</td>
-                                                                        <td><a href="/admin/guesses/edit/{$site.id}">{$site.guess|capitalize}</a></td>
+                                                                        <td>{$site.guess|capitalize}</td>
                                                                         <td>{$site.return}</td>
 									{assign var="lastupdated" value="{$site.time|substr:-10}"}
                                                                         <td>{$lastupdated|relative_date}</td>
