@@ -53,7 +53,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Useful Things</h3>
+					<h3>Useful Stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -61,14 +61,13 @@
 					
 					<div class="tab-content default-tab">
 					
-						<h3>Useful Stats</h3>
 						<p><strong>Total Unique Guesses:</strong> {$stats.numguesses}</p>
 						<p><strong>User Guess Attempts:</strong> {$stats.guessattempts}</p>
 						<p><strong>Guess Attempts in the last hour:</strong> {$stats.guessesinhour}</p>
 						<p><strong>Unique User Submits:</strong> {$stats.guesssubmits|default:"Database Currently Too Big To Compute"}</p>
 						<p><strong>Most Guessed Name:</strong> {$stats.mostguessed}</p>
 						<p><strong>Next Game play:</strong> {$stats.nextplay}</p>
-						<h3><a href="#databasebackup" rel="modal">Backup Database</a></h3>
+						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 
 					</div> <!-- End #tab3 -->        
 					
