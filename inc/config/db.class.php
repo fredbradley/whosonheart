@@ -350,7 +350,8 @@ return $output;
 function searchAttempts($search) {
 	$query = "SELECT `hash`, `guess`, `return`, `time` FROM ".DB_PREFIX."guessattempts ";
 	$where = "WHERE `guess` LIKE '%".$search."%'";
-	$this->result = mysql_query($query.$where);
+	$order = " ORDER BY `time` DESC";
+	$this->result = mysql_query($query.$where.$order);
 	while($row=mysql_fetch_assoc($this->result)) {
 		$output[] = $row;
 	}
