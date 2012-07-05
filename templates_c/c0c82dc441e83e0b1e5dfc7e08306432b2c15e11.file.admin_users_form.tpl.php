@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-18 17:48:56
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-05 21:48:56
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_users_form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21139697114fdf5bf816c5b3-59417349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c0c82dc441e83e0b1e5dfc7e08306432b2c15e11' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin_users_form.tpl',
-      1 => 1339848534,
+      1 => 1341521333,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4fdf5bf83195e7_79158927',
   'variables' => 
   array (
     'action' => 0,
     'edit' => 0,
     'dbresult' => 0,
+    'user' => 0,
     'type' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf5bf83195e7_79158927',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_4fdf5bf83195e7_79158927')) {function content_4fdf5bf83195e7_79158927($_smarty_tpl) {?> <div class="content-box-header">
 
@@ -92,9 +93,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								</p>
 							<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['action']->value;?>
 <?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=='edit'){?>
-								<p><label>Password</label>
+								<p><label>Change Password</label>
 									<input style="background:#ff0000;color:#ffffff;" class="text-input small-input" type="text" readonly id="nonedit" name="nonedit" value="Sorry, you can't change your password" />
-									<br /><small>Feature coming soon</small>
+							<?php ob_start();?><?php echo $_GET['id'];?>
+<?php $_tmp5=ob_get_clean();?><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
+<?php $_tmp6=ob_get_clean();?><?php if ($_tmp5==$_tmp6){?>		<br /><small><a href="#changepassword" rel="modal" >Feature coming soon</a></small><?php }?>
 								</p>
 							<?php }else{ ?>
 								<p><label>Password</label>
@@ -126,4 +129,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                 </form>
 <?php }?>
                                         </div> <!-- End Content Box Content -->
+<div id="changepassword" style="display:none;">
+	<form name="changepassword">
+	<input type="hidden" name="changepassword" />
+	<input type="password" name="oldpasswd" class="text-input medium-input" />
+	<input type="password" name="newpasswd" class="text-input medium-input" />
+	<input type="submit" class="button" value="Change Password" />
+	</form>
+</div>
 <?php }} ?>

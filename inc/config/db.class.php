@@ -22,9 +22,17 @@ function query ($query) {
   $this->result = mysql_query($query) or die(mysql_error());
   return $this->result;
 }
+
 function databaseBackup() {
 $query = "CREATE TABLE ".DB_PREFIX."backup_".date('YmdHis')."_guesses SELECT * FROM ".DB_PREFIX."guesses";
 $result = mysql_query($query);
+return $result;
+}
+function changePassword() {
+	$query = "SELECT * FROM ".DB_PREFIX."users WHERE id=".$_GET['id'];
+	
+	$update = "UPDATE ".DB_PREFIX."users SET passwd=".md5($_POST['newpasswd'])." WHERE id=".$_GET['id']." AND passwd='".md5($_POST['oldpasswd'])."'";
+	$result = mysql_query($update);
 return $result;
 }
 function error($message) {

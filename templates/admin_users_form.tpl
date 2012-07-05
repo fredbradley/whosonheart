@@ -49,9 +49,9 @@
 									<input value="{$edit.username}" class="text-input small-input" type="text" id="username" name="username" />
 								</p>
 							{if {$action}=='edit'}
-								<p><label>Password</label>
+								<p><label>Change Password</label>
 									<input style="background:#ff0000;color:#ffffff;" class="text-input small-input" type="text" readonly id="nonedit" name="nonedit" value="Sorry, you can't change your password" />
-									<br /><small>Feature coming soon</small>
+							{if {$smarty.get.id}=={$user.id}}		<br /><small><a href="#changepassword" rel="modal" >Feature coming soon</a></small>{/if}
 								</p>
 							{else}
 								<p><label>Password</label>
@@ -81,3 +81,11 @@
                                                 </form>
 {/if}
                                         </div> <!-- End Content Box Content -->
+<div id="changepassword" style="display:none;">
+	<form name="changepassword">
+	<input type="hidden" name="changepassword" />
+	<input type="password" name="oldpasswd" class="text-input medium-input" />
+	<input type="password" name="newpasswd" class="text-input medium-input" />
+	<input type="submit" class="button" value="Change Password" />
+	</form>
+</div>

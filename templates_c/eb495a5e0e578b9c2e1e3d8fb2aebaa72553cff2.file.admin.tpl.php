@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-07-03 18:59:53
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-05 21:29:21
          compiled from "/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:5489430344fdf363a0920c1-96696391%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21305325544ff5f921462ad8-78868253%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'eb495a5e0e578b9c2e1e3d8fb2aebaa72553cff2' => 
     array (
       0 => '/Users/fredbradley/Sites/smarty_site/whosonheart/templates/admin.tpl',
-      1 => 1341338390,
+      1 => 1341433257,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5489430344fdf363a0920c1-96696391',
+  'nocache_hash' => '21305325544ff5f921462ad8-78868253',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_4fdf363a0f8d11_57753379',
   'variables' => 
   array (
     'user' => 0,
     'stats' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_4ff5f9215db666_00478305',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_4fdf363a0f8d11_57753379')) {function content_4fdf363a0f8d11_57753379($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_4ff5f9215db666_00478305')) {function content_4ff5f9215db666_00478305($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("admin_head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
   
 
 	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
@@ -84,7 +84,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="content-box-header">
 					
-					<h3>Useful Things</h3>
+					<h3>Useful Stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -92,10 +92,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					
 					<div class="tab-content default-tab">
 					
-						<h3>Useful Stats</h3>
 						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
 </p>
 						<p><strong>User Guess Attempts:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
+</p>
+						<p><strong>Guess Attempts in the last hour:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guessesinhour'];?>
 </p>
 						<p><strong>Unique User Submits:</strong> <?php echo (($tmp = @$_smarty_tpl->tpl_vars['stats']->value['guesssubmits'])===null||$tmp==='' ? "Database Currently Too Big To Compute" : $tmp);?>
 </p>
@@ -103,7 +104,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </p>
 						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
 </p>
-						<h3><a href="#databasebackup" rel="modal">Backup Database</a></h3>
+						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 
 					</div> <!-- End #tab3 -->        
 					
