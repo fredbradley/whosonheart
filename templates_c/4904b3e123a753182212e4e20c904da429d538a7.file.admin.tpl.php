@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-21 23:03:04
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 21:21:33
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14696747564fc0d624dbbec4-62854623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4904b3e123a753182212e4e20c904da429d538a7' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin.tpl',
-      1 => 1340312582,
+      1 => 1341433289,
       2 => 'file',
     ),
   ),
@@ -84,7 +84,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				
 				<div class="content-box-header">
 					
-					<h3>Useful Things</h3>
+					<h3>Useful Stats</h3>
 					
 				</div> <!-- End .content-box-header -->
 				
@@ -92,14 +92,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					
 					<div class="tab-content default-tab">
 					
-						<h3>Useful Stats</h3>
 						<p><strong>Total Unique Guesses:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['numguesses'];?>
+</p>
+						<p><strong>User Guess Attempts:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guessattempts'];?>
+</p>
+						<p><strong>Guess Attempts in the last hour:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['guessesinhour'];?>
+</p>
+						<p><strong>Unique User Submits:</strong> <?php echo (($tmp = @$_smarty_tpl->tpl_vars['stats']->value['guesssubmits'])===null||$tmp==='' ? "Database Currently Too Big To Compute" : $tmp);?>
 </p>
 						<p><strong>Most Guessed Name:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['mostguessed'];?>
 </p>
 						<p><strong>Next Game play:</strong> <?php echo $_smarty_tpl->tpl_vars['stats']->value['nextplay'];?>
 </p>
-						<h3><a href="#databasebackup" rel="modal">Backup Database</a></h3>
+						<p><a href="#databasebackup" rel="modal"><strong>Backup Database</strong></a></p>
 
 					</div> <!-- End #tab3 -->        
 					

@@ -412,24 +412,25 @@ function usefulStats() {
 
 function nextPlay() {
 date_default_timezone_set('Europe/London');
-	if (date("w") > 0 && date("w") < 6) {
+// Seems to be an error on Monday mornings before 9am?
+	if (date("w") > "0" && date("w") < "6") {
 	// If it's Mon, Tue, Wed, Thu or Fri
-		if (date("Hi") > 0900 && date("Hi") < 1550) {
+		if (date("Hi") > "0900" && date("Hi") < "1550") {
 		// If it's between 0901 and 1550 (on Mon, Tue, Wed, Thu, or Fri)
 			$output = "later this hour";
-		} elseif (date("Hi") < 0900) {
+		} elseif (date("Hi") < "0900") {
 		// If it's before 0900 (on Mon, Tue, Wed, Thu or Fri)
 			$output = "at 10am";
-		} elseif (date("Hi") > 1550 && date("w") != 5) {
+		} elseif (date("Hi") > "1550" && date("w") != "5") {
 		// If it's after 1550 BUT NOT Friday
 			$output = "tomorrow";
-		} elseif (date("Hi") > 1550 && date("w") == 5) {
+		} elseif (date("Hi") > "1550" && date("w") == "5") {
 		// If it's after 1550 AND Friday
 			$output = "on Monday";
 		}
-	} elseif (date("w") == 6) {
+	} elseif (date("w") == "6") {
 		$output = "on Monday";
-	} elseif (date("w") == 0) {
+	} elseif (date("w") == "0") {
 		$output = "tomorrow";
 	}
 return $output;
@@ -442,8 +443,8 @@ function guessMade($input, $return, $hash) {
 	$host = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 	$time = time();
 	$query = "INSERT INTO ".DB_PREFIX."guessattempts ";
-	$query .= "(`hash`, `guess`, `return`, `ip`, `host`, `time`) VALUES ";
-	$query .= "('".$hash."', '".$input."', '".$return."', '".$ip."', '".$host."', ".$time.")";
+	$query .= "(`hash`, `guess`, `return`, `time`) VALUES ";
+	$query .= "('".$hash."', '".$input."', '".$return."', ".$time.")";
 	$result = mysql_query($query);
 	if (!$result)
 		die(mysql_error());

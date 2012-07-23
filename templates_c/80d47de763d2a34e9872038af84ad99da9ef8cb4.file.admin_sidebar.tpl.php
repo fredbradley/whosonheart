@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2012-06-21 17:16:16
+<?php /* Smarty version Smarty-3.1.8, created on 2012-07-04 11:36:53
          compiled from "/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sidebar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19369074884fc0d625078f15-25407239%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '80d47de763d2a34e9872038af84ad99da9ef8cb4' => 
     array (
       0 => '/kunden/homepages/3/d298570323/htdocs/_smarty_sites/whosonheart/templates/admin_sidebar.tpl',
-      1 => 1340291721,
+      1 => 1341398209,
       2 => 'file',
     ),
   ),
@@ -62,11 +62,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<li><a href="/admin/guesses/list">List Guesses</a></li>
 					</ul>
 				</li>
-				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
-<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4>2){?>
 				<li>
 					<a href="#" class="nav-top-item <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
-<?php $_tmp5=ob_get_clean();?><?php if ($_tmp5=="users"){?>current<?php }?>">
+<?php $_tmp4=ob_get_clean();?><?php if ($_tmp4=="guessattempts"){?>current<?php }?>">
+						Guess Attempts
+					</a>
+					<ul>
+						<li><a href="/admin/searched/list">View Search Attempts</a></li>
+					</ul>
+				</li>
+				<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['user']->value['acl'];?>
+<?php $_tmp5=ob_get_clean();?><?php if ($_tmp5>2){?>
+				<li>
+					<a href="#" class="nav-top-item <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+<?php $_tmp6=ob_get_clean();?><?php if ($_tmp6=="users"){?>current<?php }?>">
 						User Manager
 					</a>
 					<ul>
