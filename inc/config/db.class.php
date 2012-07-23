@@ -417,22 +417,23 @@ date_default_timezone_set('Europe/London');
 	// If it's Mon, Tue, Wed, Thu or Fri
 		if (date("Hi") > "0900" && date("Hi") < "1550") {
 		// If it's between 0901 and 1550 (on Mon, Tue, Wed, Thu, or Fri)
-			$output = "later this hour";
+			$output = " later this hour";
 		} elseif (date("Hi") < "0900") {
 		// If it's before 0900 (on Mon, Tue, Wed, Thu or Fri)
-			$output = "at 10am";
+			$output = " at 10am";
 		} elseif (date("Hi") > "1550" && date("w") != "5") {
 		// If it's after 1550 BUT NOT Friday
-			$output = "tomorrow";
+			$output = " tomorrow";
 		} elseif (date("Hi") > "1550" && date("w") == "5") {
 		// If it's after 1550 AND Friday
-			$output = "on Monday";
+			$output = " on Monday";
 		}
 	} elseif (date("w") == "6") {
-		$output = "on Monday";
+		$output = " on Monday";
 	} elseif (date("w") == "0") {
-		$output = "tomorrow";
+		$output = " tomorrow";
 	}
+$output = "";
 return $output;
 }
 
